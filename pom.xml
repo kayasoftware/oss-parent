@@ -21,10 +21,6 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <prerequisites>
-        <maven>${config.maven.version}</maven>
-    </prerequisites>
-
     <!-- =========================== -->
     <!-- Project specific settings, should-->
     <!-- be redefined in project's POMs -->
@@ -37,6 +33,12 @@
     <name>OSS Parent POM</name>
     <description>Parent POM for Kaya Software's open source projects deployed to sonatype's oss repository.</description>
     <url>https://${config.scmOwner}.${config.scmHostname}/${config.scmRepoName}</url>
+    <inceptionYear>2014</inceptionYear>
+
+    <organization>
+        <name>${config.organizationName}</name>
+        <url>${config.organizationUrl}</url>
+    </organization>
 
     <licenses>
         <license>
@@ -46,23 +48,6 @@
             <comments>A business-friendly OSS license</comments>
         </license>
     </licenses>
-
-    <organization>
-        <name>${config.organizationName}</name>
-        <url>${config.organizationUrl}</url>
-    </organization>
-
-    <inceptionYear>2014</inceptionYear>
-
-    <ciManagement>
-        <system>${config.ciManagementSystem}</system>
-        <url>${config.ciManagementUrl}</url>
-    </ciManagement>
-
-    <issueManagement>
-        <system>${config.issueManagementSystem}</system>
-        <url>${config.issueManagementUrl}</url>
-    </issueManagement>
 
     <developers>
         <developer>
@@ -78,11 +63,25 @@
         </developer>
     </developers>
 
+    <prerequisites>
+        <maven>${config.maven.version}</maven>
+    </prerequisites>
+
     <scm>
         <connection>scm:git:git://${config.scmHostname}/${config.scmOwner}/${config.scmRepoName}.git</connection>
         <developerConnection>scm:git:git@${config.scmHostname}:${config.scmOwner}/${config.scmRepoName}.git</developerConnection>
         <url>https://${config.scmHostname}/${config.scmOwner}/${config.scmRepoName}</url>
     </scm>
+
+    <issueManagement>
+        <system>${config.issueManagementSystem}</system>
+        <url>${config.issueManagementUrl}</url>
+    </issueManagement>
+
+    <ciManagement>
+        <system>${config.ciManagementSystem}</system>
+        <url>${config.ciManagementUrl}</url>
+    </ciManagement>
 
     <distributionManagement>
         <repository>
@@ -270,7 +269,7 @@
         <config.enforcer.pluginManagementOrderBy>groupId,artifactId</config.enforcer.pluginManagementOrderBy>
 
         <!-- PedanticPomSectionOrderEnforcer -->
-        <config.enforcer.pomSectionPriorities>modelVersion,prerequisites,parent,groupId,artifactId,version,packaging,name,description,url,licenses,organization,inceptionYear,ciManagement,mailingLists,issueManagement,developers,contributors,scm,repositories,pluginRepositories,distributionManagement,modules,properties,dependencyManagement,dependencies,build,profiles,reporting,reports</config.enforcer.pomSectionPriorities>
+        <config.enforcer.pomSectionPriorities>modelVersion,parent,groupId,artifactId,version,packaging,name,description,url,inceptionYear,organization,licenses,developers,contributors,mailingLists,prerequisites,modules,scm,issueManagement,ciManagement,distributionManagement,properties,dependencyManagement,dependencies,repositories,pluginRepositories,build,reports,reporting,profiles</config.enforcer.pomSectionPriorities>
 
         <!-- ========================= -->
         <!-- Plugin version properties -->
@@ -1392,26 +1391,6 @@
         </plugins>
     </build>
 
-    <profiles>
-        <profile>
-            <id>oss-release</id>
-            <build>
-                <plugins>
-                    <!-- oss requires a javadoc jar. Build one when releasing. -->
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-javadoc-plugin</artifactId>
-                    </plugin>
-                    <!-- Sign artifacts using gpg for oss upload -->
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-gpg-plugin</artifactId>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-    </profiles>
-
     <reporting>
         <plugins>
             <plugin>
@@ -1647,4 +1626,24 @@
             </plugin>
         </plugins>
     </reporting>
+
+    <profiles>
+        <profile>
+            <id>oss-release</id>
+            <build>
+                <plugins>
+                    <!-- oss requires a javadoc jar. Build one when releasing. -->
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                    </plugin>
+                    <!-- Sign artifacts using gpg for oss upload -->
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 </project>
