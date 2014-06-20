@@ -36,6 +36,7 @@
 
     <name>OSS Parent POM</name>
     <description>Parent POM for Kaya Software's open source projects deployed to sonatype's oss repository.</description>
+    <url>https://${config.scmOwner}.${config.scmHostname}/${config.scmRepoName}</url>
 
     <licenses>
         <license>
@@ -78,9 +79,9 @@
     </developers>
 
     <scm>
-        <url>https://github.com/kayasoftware/${project.artifactId}</url>
-        <connection>scm:git:git://github.com/kayasoftware/${project.artifactId}.git</connection>
-        <developerConnection>scm:git:git@github.com:kayasoftware/${project.artifactId}.git</developerConnection>
+        <connection>scm:git:git://${config.scmHostname}/${config.scmOwner}/${config.scmRepoName}.git</connection>
+        <developerConnection>scm:git:git@${config.scmHostname}:${config.scmOwner}/${config.scmRepoName}.git</developerConnection>
+        <url>https://${config.scmHostname}/${config.scmOwner}/${config.scmRepoName}</url>
     </scm>
 
     <distributionManagement>
@@ -142,7 +143,12 @@
         <!-- POM specific configuration properties -->
         <!-- ================================= -->
 
-        <!-- Repository locations (do not overwrite) -->
+        <!-- Source Control Management Information -->
+        <config.scmHostname>github.com</config.scmHostname>
+        <config.scmOwner>kayasoftware</config.scmOwner>
+        <config.scmRepoName>${project.artifactId}</config.scmRepoName>
+
+        <!-- Repository locations -->
         <config.releaseRepositoryId>sonatype-nexus-staging</config.releaseRepositoryId>
         <config.releaseRepositoryUrl>https://oss.sonatype.org/service/local/staging/deploy/maven2</config.releaseRepositoryUrl>
 
@@ -150,18 +156,17 @@
         <config.snapshotRepositoryUrl>https://oss.sonatype.org/content/repositories/snapshots</config.snapshotRepositoryUrl>
 
         <config.siteRepositoryId>github-project-site</config.siteRepositoryId>
-        <config.siteRepositoryUrl>gitsite:git@github.com/kayasoftware/${project.artifactId}.git</config.siteRepositoryUrl>
+        <config.siteRepositoryUrl>scm:git:git@${config.scmHostname}:${config.scmOwner}/${config.scmRepoName}.git</config.siteRepositoryUrl>
 
-        <!-- Project information (do not overwrite) -->
+        <!-- Project information -->
         <config.organizationName>Kaya Software, LLC</config.organizationName>
         <config.organizationUrl>http://github.com/kayasoftware</config.organizationUrl>
-        <config.siteUrl/>
 
         <config.issueManagementSystem>GitHub Issue Management</config.issueManagementSystem>
-        <config.issueManagementUrl>https://github.com/kayasoftware/${project.artifactId}/issues</config.issueManagementUrl>
+        <config.issueManagementUrl>https://${config.scmHostname}/${config.scmOwner}/${config.scmRepoName}/issues</config.issueManagementUrl>
 
         <config.ciManagementSystem>Travis CI</config.ciManagementSystem>
-        <config.ciManagementUrl>https://travis-ci.org/kayasoftware/${project.artifactId}</config.ciManagementUrl>
+        <config.ciManagementUrl>https://travis-ci.org/${config.scmOwner}/${config.scmRepoName}</config.ciManagementUrl>
 
         <!-- Default jvm size for compiler, tests etc. -->
         <config.build.jvmsize>1024m</config.build.jvmsize>
