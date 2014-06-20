@@ -21,10 +21,10 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <!-- =========================== -->
-    <!-- Project specific settings, should-->
-    <!-- be redefined in project's POMs -->
-    <!-- =========================== -->
+    <!-- *********************************** -->
+    <!--  Project specific settings, should  -->
+    <!--  be redefined in project's POMs     -->
+    <!-- *********************************** -->
     <groupId>com.kayasoftware.pom</groupId>
     <artifactId>oss-parent</artifactId>
     <version>1-SNAPSHOT</version>
@@ -32,7 +32,7 @@
 
     <name>OSS Parent POM</name>
     <description>Parent POM for Kaya Software's open source projects deployed to sonatype's oss repository.</description>
-    <url>https://${config.scmOwner}.${config.scmHostname}/${config.scmRepoName}</url>
+    <url>https://${config.scm.owner}.${config.scm.hostname}/${config.scm.repoName}</url>
     <inceptionYear>2014</inceptionYear>
 
     <organization>
@@ -68,9 +68,9 @@
     </prerequisites>
 
     <scm>
-        <connection>scm:git:git://${config.scmHostname}/${config.scmOwner}/${config.scmRepoName}.git</connection>
-        <developerConnection>scm:git:git@${config.scmHostname}:${config.scmOwner}/${config.scmRepoName}.git</developerConnection>
-        <url>https://${config.scmHostname}/${config.scmOwner}/${config.scmRepoName}</url>
+        <connection>scm:git:git://${config.scm.hostname}/${config.scm.owner}/${config.scm.repoName}.git</connection>
+        <developerConnection>scm:git:git@${config.scm.hostname}:${config.scm.owner}/${config.scm.repoName}.git</developerConnection>
+        <url>https://${config.scm.hostname}/${config.scm.owner}/${config.scm.repoName}</url>
     </scm>
 
     <issueManagement>
@@ -99,9 +99,9 @@
     </distributionManagement>
 
     <properties>
-        <!-- ================= -->
-        <!-- Global Plugin Properties -->
-        <!-- ================= -->
+        <!-- ************************** -->
+        <!--  Global Plugin Properties -->
+        <!-- ************************** -->
 
         <!-- Set default encoding to UTF-8 (most plugins) -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -118,34 +118,22 @@
         <!-- Speed-up site generation (applies to maven-project-info-reports-plugin) -->
         <dependency.locations.enabled>false</dependency.locations.enabled>
 
-        <!-- Set checkstyle specific rules located in build-support jar by default (applies to maven-checkstyle-plugin) -->
-        <checkstyle.config.location>checkstyle/config/default_checks.xml</checkstyle.config.location>
-
-        <!-- Set license header text located in build-support jar by default (applies to license-maven-plugin) -->
-        <license.header>templates/license/APACHE-2.txt</license.header>
-
         <!-- Set build timestamp format -->
-        <!-- Has to comply with the rules given in the API documentation for SimpleDateFormat -->
+        <!-- Note: Has to comply with the rules given in the API documentation for SimpleDateFormat -->
         <maven.build.timestamp.format>yyyy-MM-dd'T'HH:mm:ss.SSSZ</maven.build.timestamp.format>
 
         <!-- Define new properties that will be set by the buildnumber-maven-plugin to use in resource filtering -->
         <build.number>${buildNumber}</build.number>
         <build.timestamp>${timestamp}</build.timestamp>
 
-        <!-- Define default properties for jboss-as-maven-plugin -->
-        <jboss-as.hostname>localhost</jboss-as.hostname>
-        <jboss-as.port>9999</jboss-as.port>
-        <jboss-as.id/>
-        <jboss-as.server-group/>
-
-        <!-- ================================= -->
-        <!-- POM specific configuration properties -->
-        <!-- ================================= -->
+        <!-- *************************************** -->
+        <!--  POM specific configuration properties -->
+        <!-- *************************************** -->
 
         <!-- Source Control Management Information -->
-        <config.scmHostname>github.com</config.scmHostname>
-        <config.scmOwner>kayasoftware</config.scmOwner>
-        <config.scmRepoName>${project.artifactId}</config.scmRepoName>
+        <config.scm.hostname>github.com</config.scm.hostname>
+        <config.scm.owner>kayasoftware</config.scm.owner>
+        <config.scm.repoName>${project.artifactId}</config.scm.repoName>
 
         <!-- Repository locations -->
         <config.releaseRepositoryId>sonatype-nexus-staging</config.releaseRepositoryId>
@@ -155,74 +143,86 @@
         <config.snapshotRepositoryUrl>https://oss.sonatype.org/content/repositories/snapshots</config.snapshotRepositoryUrl>
 
         <config.siteRepositoryId>github-project-site</config.siteRepositoryId>
-        <config.siteRepositoryUrl>scm:git:git@${config.scmHostname}:${config.scmOwner}/${config.scmRepoName}.git</config.siteRepositoryUrl>
+        <config.siteRepositoryUrl>scm:git:git@${config.scm.hostname}:${config.scm.owner}/${config.scm.repoName}.git</config.siteRepositoryUrl>
 
         <!-- Project information -->
         <config.organizationName>Kaya Software, LLC</config.organizationName>
         <config.organizationUrl>http://github.com/kayasoftware</config.organizationUrl>
 
         <config.issueManagementSystem>GitHub Issue Management</config.issueManagementSystem>
-        <config.issueManagementUrl>https://${config.scmHostname}/${config.scmOwner}/${config.scmRepoName}/issues</config.issueManagementUrl>
+        <config.issueManagementUrl>https://${config.scm.hostname}/${config.scm.owner}/${config.scm.repoName}/issues</config.issueManagementUrl>
 
         <config.ciManagementSystem>Travis CI</config.ciManagementSystem>
-        <config.ciManagementUrl>https://travis-ci.org/${config.scmOwner}/${config.scmRepoName}</config.ciManagementUrl>
+        <config.ciManagementUrl>https://travis-ci.org/${config.scm.owner}/${config.scm.repoName}</config.ciManagementUrl>
 
         <!-- Default jvm size for compiler, tests etc. -->
         <config.build.jvmsize>1024m</config.build.jvmsize>
 
+        <!-- In Multi-module builds, override this to point at the parent directory -->
+        <!-- See http://stackoverflow.com/questions/1012402/maven2-property-that-indicates-the-parent-directory -->
+        <config.main.basedir>${project.basedir}</config.main.basedir>
+
         <!-- whether a release:perform automatically pushes the created files and tags to the upstream repository -->
-        <config.release.push-changes>false</config.release.push-changes>
+        <config.release.pushChanges>false</config.release.pushChanges>
+
+        <!-- Set checkstyle specific rules located in build-support jar by default (applies to maven-checkstyle-plugin) -->
+        <config.checkstyle.location>checkstyle/config/default_checks.xml</config.checkstyle.location>
+
+        <!-- Set license header text located in build-support jar by default (applies to license-maven-plugin) -->
+        <config.license.header>templates/license/APACHE-2.txt</config.license.header>
 
         <!-- the current "best" version of maven -->
         <config.maven.version>3.0.5</config.maven.version>
 
-        <!-- In Multimodule builds, override this to point at the parent directory. -->
-        <!-- See http://stackoverflow.com/questions/1012402/maven2-property-that-indicates-the-parent-directory -->
-        <config.main.basedir>${project.basedir}</config.main.basedir>
-
         <!-- define the number of VMs to fork in parallel in order to execute the tests, default value is 1 -->
-        <config.test.fork-count>1</config.test.fork-count>
+        <config.test.forkCount>1</config.test.forkCount>
         <!-- define if forked VMs can be reused in tests, default value is true -->
-        <config.test.reuse-forks>true</config.test.reuse-forks>
+        <config.test.reuseForks>true</config.test.reuseForks>
 
         <config.findbugs.excludeFilterFile/>
 
+        <!-- Define default properties for jboss-as-maven-plugin -->
+        <config.jboss-as.hostname>localhost</config.jboss-as.hostname>
+        <config.jboss-as.port>9999</config.jboss-as.port>
+        <config.jboss-as.id/>
+        <config.jboss-as.server-group/>
+
         <!-- Controls all the checkers run when building the project -->
         <!-- Can be activated with -Dconfig.check.skip-all=true on the command line -->
-        <config.check.skip-all>false</config.check.skip-all>
+        <config.check.skipAll>false</config.check.skipAll>
         <!-- Controls the basic checkers run when building the project.          -->
-        <config.check.skip-basic>${config.check.skip-all}</config.check.skip-basic>
+        <config.check.skipBasic>${config.check.skipAll}</config.check.skipBasic>
         <!-- Controls the extended checkers run when building the project.       -->
-        <config.check.skip-extended>${config.check.skip-all}</config.check.skip-extended>
+        <config.check.skipExtended>${config.check.skipAll}</config.check.skipExtended>
 
         <!-- skip basic checks -->
-        <config.check.skip-enforcer>${config.check.skip-basic}</config.check.skip-enforcer>
-        <config.check.skip-dependency>${config.check.skip-basic}</config.check.skip-dependency>
-        <config.check.skip-checkstyle>${config.check.skip-basic}</config.check.skip-checkstyle>
-        <config.check.skip-duplicate-finder>${config.check.skip-basic}</config.check.skip-duplicate-finder>
-        <config.check.skip-dependency-versions-check>${config.check.skip-basic}</config.check.skip-dependency-versions-check>
+        <config.check.skipEnforcer>${config.check.skipBasic}</config.check.skipEnforcer>
+        <config.check.skipDependency>${config.check.skipBasic}</config.check.skipDependency>
+        <config.check.skipCheckstyle>${config.check.skipBasic}</config.check.skipCheckstyle>
+        <config.check.skipDuplicateFinder>${config.check.skipBasic}</config.check.skipDuplicateFinder>
+        <config.check.skipDependencyVersionsCheck>${config.check.skipBasic}</config.check.skipDependencyVersionsCheck>
 
         <!-- skip extended checks -->
-        <config.check.skip-findbugs>${config.check.skip-extended}</config.check.skip-findbugs>
-        <config.check.skip-pmd>${config.check.skip-extended}</config.check.skip-pmd>
-        <config.check.skip-license>${config.check.skip-extended}</config.check.skip-license>
-        <config.check.skip-jacoco>${config.check.skip-extended}</config.check.skip-jacoco>
+        <config.check.skipFindbugs>${config.check.skipExtended}</config.check.skipFindbugs>
+        <config.check.skipPmd>${config.check.skipExtended}</config.check.skipPmd>
+        <config.check.skipLicense>${config.check.skipExtended}</config.check.skipLicense>
+        <config.check.skipJacoco>${config.check.skipExtended}</config.check.skipJacoco>
 
-        <config.check.fail-all>true</config.check.fail-all>
-        <config.check.fail-basic>${config.check.fail-all}</config.check.fail-basic>
-        <config.check.fail-extended>${config.check.fail-all}</config.check.fail-extended>
+        <config.check.failAll>true</config.check.failAll>
+        <config.check.failBasic>${config.check.failAll}</config.check.failBasic>
+        <config.check.failExtended>${config.check.failAll}</config.check.failExtended>
 
         <!-- fail build on basic checks -->
-        <config.check.fail-enforcer>${config.check.fail-basic}</config.check.fail-enforcer>
-        <config.check.fail-dependency>${config.check.fail-basic}</config.check.fail-dependency>
-        <config.check.fail-checkstyle>${config.check.fail-basic}</config.check.fail-checkstyle>
-        <config.check.fail-duplicate-finder>${config.check.fail-basic}</config.check.fail-duplicate-finder>
-        <config.check.fail-dependency-versions-check>${config.check.fail-basic}</config.check.fail-dependency-versions-check>
+        <config.check.failEnforcer>${config.check.failBasic}</config.check.failEnforcer>
+        <config.check.failDependency>${config.check.failBasic}</config.check.failDependency>
+        <config.check.failCheckstyle>${config.check.failBasic}</config.check.failCheckstyle>
+        <config.check.failDuplicateFinder>${config.check.failBasic}</config.check.failDuplicateFinder>
+        <config.check.failDependencyVersionsCheck>${config.check.failBasic}</config.check.failDependencyVersionsCheck>
 
         <!-- fail build on extended checks -->
-        <config.check.fail-findbugs>${config.check.fail-extended}</config.check.fail-findbugs>
-        <config.check.fail-pmd>${config.check.fail-extended}</config.check.fail-pmd>
-        <config.check.fail-license>${config.check.fail-extended}</config.check.fail-license>
+        <config.check.failFindbugs>${config.check.failExtended}</config.check.failFindbugs>
+        <config.check.failPmd>${config.check.failExtended}</config.check.failPmd>
+        <config.check.failLicense>${config.check.failExtended}</config.check.failLicense>
 
         <!-- Pedantic POM Enforcers consist of serveral Maven enforcer rules that help you keep your -->
         <!-- project setup consistent and organized (https://github.com/ferstl/pedantic-pom-enforcers) -->
@@ -275,9 +275,9 @@
         <!-- PedanticPomSectionOrderEnforcer -->
         <config.enforcer.pomSectionPriorities>modelVersion,parent,groupId,artifactId,version,packaging,name,description,url,inceptionYear,organization,licenses,developers,contributors,mailingLists,prerequisites,modules,scm,issueManagement,ciManagement,distributionManagement,properties,dependencyManagement,dependencies,repositories,pluginRepositories,build,reports,reporting,profiles</config.enforcer.pomSectionPriorities>
 
-        <!-- ========================= -->
-        <!-- Plugin version properties -->
-        <!-- ========================= -->
+        <!-- *************************** -->
+        <!--  Plugin version properties  -->
+        <!-- *************************** -->
 
         <version.acr-plugin>1.0</version.acr-plugin>
         <version.ant-plugin>2.3</version.ant-plugin>
@@ -363,10 +363,10 @@
                     <artifactId>license-maven-plugin</artifactId>
                     <version>${version.license-plugin}</version>
                     <configuration>
-                        <skip>${config.check.skip-license}</skip>
+                        <skip>${config.check.skipLicense}</skip>
                         <skipExistingHeaders>true</skipExistingHeaders>
-                        <failIfMissing>${config.check.fail-license}</failIfMissing>
-                        <header>${license.header}</header>
+                        <failIfMissing>${config.check.failLicense}</failIfMissing>
+                        <header>${config.license.header}</header>
                         <encoding>${project.build.sourceEncoding}</encoding>
                         <mapping>
                             <java>SLASHSTAR_STYLE</java>
@@ -410,8 +410,8 @@
                     <artifactId>maven-dependency-versions-check-plugin</artifactId>
                     <version>${version.dependency-versions-check}</version>
                     <configuration>
-                        <skip>${config.check.skip-dependency-versions-check}</skip>
-                        <failBuildInCaseOfConflict>${config.check.fail-dependency-versions-check}</failBuildInCaseOfConflict>
+                        <skip>${config.check.skipDependencyVersionsCheck}</skip>
+                        <failBuildInCaseOfConflict>${config.check.failDependencyVersionsCheck}</failBuildInCaseOfConflict>
                     </configuration>
                     <executions>
                         <execution>
@@ -438,8 +438,8 @@
                         </execution>
                     </executions>
                     <configuration>
-                        <skip>${config.check.skip-duplicate-finder}</skip>
-                        <failBuildInCaseOfConflict>${config.check.fail-duplicate-finder}</failBuildInCaseOfConflict>
+                        <skip>${config.check.skipDuplicateFinder}</skip>
+                        <failBuildInCaseOfConflict>${config.check.failDuplicateFinder}</failBuildInCaseOfConflict>
                         <ignoredResources>
                             <ignoredResource>.*\.html</ignoredResource>
                             <ignoredResource>META-INF/.*</ignoredResource>
@@ -509,10 +509,10 @@
                     <artifactId>maven-checkstyle-plugin</artifactId>
                     <version>${version.checkstyle-plugin}</version>
                     <configuration>
-                        <configLocation>${checkstyle.config.location}</configLocation>
-                        <failOnViolation>${config.check.fail-checkstyle}</failOnViolation>
+                        <configLocation>${config.checkstyle.location}</configLocation>
+                        <failOnViolation>${config.check.failCheckstyle}</failOnViolation>
                         <logViolationsToConsole>true</logViolationsToConsole>
-                        <skip>${config.check.skip-checkstyle}</skip>
+                        <skip>${config.check.skipCheckstyle}</skip>
                     </configuration>
                     <executions>
                         <execution>
@@ -553,8 +553,8 @@
                     <artifactId>maven-dependency-plugin</artifactId>
                     <version>${version.dependency-plugin}</version>
                     <configuration>
-                        <skip>${config.check.skip-dependency}</skip>
-                        <failOnWarning>${config.check.fail-dependency}</failOnWarning>
+                        <skip>${config.check.skipDependency}</skip>
+                        <failOnWarning>${config.check.failDependency}</failOnWarning>
                         <ignoreNonCompile>true</ignoreNonCompile>
                     </configuration>
                     <executions>
@@ -623,8 +623,8 @@
                         </execution>
                     </executions>
                     <configuration>
-                        <skip>${config.check.skip-enforcer}</skip>
-                        <fail>${config.check.fail-enforcer}</fail>
+                        <skip>${config.check.skipEnforcer}</skip>
+                        <fail>${config.check.failEnforcer}</fail>
                         <failFast>false</failFast>
                         <rules>
                             <requireMavenVersion>
@@ -956,8 +956,8 @@
                         </dependency>
                     </dependencies>
                     <configuration>
-                        <skip>${config.check.skip-pmd}</skip>
-                        <failOnViolation>${config.check.fail-pmd}</failOnViolation>
+                        <skip>${config.check.skipPmd}</skip>
+                        <failOnViolation>${config.check.failPmd}</failOnViolation>
                         <failurePriority>4</failurePriority>
                         <targetJdk>${maven.compiler.target}</targetJdk>
                         <sourceEncoding>${project.build.sourceEncoding}</sourceEncoding>
@@ -1007,7 +1007,7 @@
                         <localCheckout>true</localCheckout>
                         <mavenExecutorId>forked-path</mavenExecutorId>
                         <preparationGoals>clean install</preparationGoals>
-                        <pushChanges>${config.release.push-changes}</pushChanges>
+                        <pushChanges>${config.release.pushChanges}</pushChanges>
                         <releaseProfiles>oss-release</releaseProfiles>
                         <useReleaseProfile>false</useReleaseProfile>
                     </configuration>
@@ -1143,8 +1143,8 @@
                             <java.awt.headless>true</java.awt.headless>
                         </systemPropertyVariables>
                         <runOrder>random</runOrder>
-                        <forkCount>${config.test.fork-count}</forkCount>
-                        <reuseForks>${config.test.reuse-forks}</reuseForks>
+                        <forkCount>${config.test.forkCount}</forkCount>
+                        <reuseForks>${config.test.reuseForks}</reuseForks>
                     </configuration>
                 </plugin>
 
@@ -1233,9 +1233,9 @@
                     <artifactId>findbugs-maven-plugin</artifactId>
                     <version>${version.findbugs-plugin}</version>
                     <configuration>
-                        <skip>${config.check.skip-findbugs}</skip>
+                        <skip>${config.check.skipFindbugs}</skip>
                         <jvmArgs>-Xmx${config.build.jvmsize}</jvmArgs>
-                        <failOnError>${config.check.fail-findbugs}</failOnError>
+                        <failOnError>${config.check.failFindbugs}</failOnError>
                         <excludeFilterFile>${config.findbugs.excludeFilterFile}</excludeFilterFile>
                     </configuration>
                     <executions>
@@ -1269,7 +1269,7 @@
                     <artifactId>jacoco-maven-plugin</artifactId>
                     <version>${version.jacoco-plugin}</version>
                     <configuration>
-                        <skip>${config.check.skip-jacoco}</skip>
+                        <skip>${config.check.skipJacoco}</skip>
                     </configuration>
                     <executions>
                         <execution>
@@ -1321,15 +1321,15 @@
                         <!-- specifies the name used for the deployment. -->
                         <name>${project.artifactId}.${project.packaging}</name>
                         <!-- hostname defaults to localhost -->
-                        <hostname>${jboss-as.hostname}</hostname>
+                        <hostname>${config.jboss-as.hostname}</hostname>
                         <!-- port defaults to 9999 -->
-                        <port>${jboss-as.port}</port>
+                        <port>${config.jboss-as.port}</port>
                         <!-- no default, server id for credentials needs to be supplied -->
-                        <id>${jboss-as.id}</id>
+                        <id>${config.jboss-as.id}</id>
                         <domain>
                             <server-groups>
                                 <!-- no default, target server group needs to be supplied -->
-                                <server-group>${jboss-as.server-group}</server-group>
+                                <server-group>${config.jboss-as.server-group}</server-group>
                             </server-groups>
                         </domain>
                     </configuration>
