@@ -176,6 +176,10 @@
         <!-- the current "best" version of maven -->
         <config.maven.version>3.0.5</config.maven.version>
 
+        <!-- In Multimodule builds, override this to point at the parent directory. -->
+        <!-- See http://stackoverflow.com/questions/1012402/maven2-property-that-indicates-the-parent-directory -->
+        <config.main.basedir>${project.basedir}</config.main.basedir>
+
         <!-- define the number of VMs to fork in parallel in order to execute the tests, default value is 1 -->
         <config.test.fork-count>1</config.test.fork-count>
         <!-- define if forked VMs can be reused in tests, default value is true -->
