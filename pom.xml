@@ -166,7 +166,7 @@
         <config.release.pushChanges>false</config.release.pushChanges>
 
         <!-- Set checkstyle specific rules located in build-support jar by default (applies to maven-checkstyle-plugin) -->
-        <config.checkstyle.location>checkstyle/config/default_checks.xml</config.checkstyle.location>
+        <config.checkstyle.location>checkstyle/config/curated_checks.xml</config.checkstyle.location>
 
         <!-- Set license header text located in build-support jar by default (applies to license-maven-plugin) -->
         <config.license.header>templates/license/APACHE-2.txt</config.license.header>
