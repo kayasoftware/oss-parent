@@ -1017,6 +1017,9 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-scm-publish-plugin</artifactId>
                     <version>${version.scm-publish-plugin}</version>
+                    <configuration>
+                        <scmBranch>gh-pages</scmBranch>
+                    </configuration>
                 </plugin>
 
                 <plugin>
@@ -1033,6 +1036,8 @@
                     <version>${version.site-plugin}</version>
                     <configuration>
                         <locales>en</locales>
+                        <!-- We are deploying site using scm-publish. -->
+                        <skipDeploy>true</skipDeploy>
                     </configuration>
                     <executions>
                         <!-- For Maven3 default execution of site:attach-descriptor has been removed from the built-in
