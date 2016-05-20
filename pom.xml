@@ -320,7 +320,6 @@
         <version.pedantic-pom-enforcers>1.1.2</version.pedantic-pom-enforcers>
         <version.plugin-plugin>3.4</version.plugin-plugin>
         <version.pmd-plugin>3.6</version.pmd-plugin>
-        <version.pmd>5.1.1</version.pmd>
         <version.pom-build-support>1.0-SNAPSHOT</version.pom-build-support>
         <version.project-info-reports-plugin>2.9</version.project-info-reports-plugin>
         <version.rar-plugin>2.4</version.rar-plugin>
@@ -948,13 +947,6 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-pmd-plugin</artifactId>
                     <version>${version.pmd-plugin}</version>
-                    <dependencies>
-                        <dependency>
-                            <groupId>net.sourceforge.pmd</groupId>
-                            <artifactId>pmd</artifactId>
-                            <version>${version.pmd}</version>
-                        </dependency>
-                    </dependencies>
                     <configuration>
                         <skip>${config.check.skipPmd}</skip>
                         <failOnViolation>${config.check.failPmd}</failOnViolation>
