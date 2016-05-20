@@ -279,69 +279,69 @@
         <!--  Plugin version properties  -->
         <!-- *************************** -->
 
-        <version.acr-plugin>1.1</version.acr-plugin>
-        <version.ant-plugin>2.3</version.ant-plugin>
-        <version.antrun-plugin>1.7</version.antrun-plugin>
-        <version.archetype-plugin>2.2</version.archetype-plugin>
-        <version.assembly-plugin>2.4.1</version.assembly-plugin>
-        <version.build-helper-plugin>1.9.1</version.build-helper-plugin>
-        <version.buildnumber-plugin>1.3</version.buildnumber-plugin>
+        <version.acr-plugin>3.0.0</version.acr-plugin>
+        <version.ant-plugin>2.4</version.ant-plugin>
+        <version.antrun-plugin>1.8</version.antrun-plugin>
+        <version.archetype-plugin>2.4</version.archetype-plugin>
+        <version.assembly-plugin>2.6</version.assembly-plugin>
+        <version.build-helper-plugin>1.10</version.build-helper-plugin>
+        <version.buildnumber-plugin>1.4</version.buildnumber-plugin>
         <version.changelog-plugin>2.3</version.changelog-plugin>
-        <version.changes-plugin>2.10</version.changes-plugin>
-        <version.checkstyle-plugin>2.12.1</version.checkstyle-plugin>
-        <version.clean-plugin>2.5</version.clean-plugin>
-        <version.compiler-plugin>3.1</version.compiler-plugin>
-        <version.dependency-plugin>2.8</version.dependency-plugin>
+        <version.changes-plugin>2.12</version.changes-plugin>
+        <version.checkstyle-plugin>2.17</version.checkstyle-plugin>
+        <version.clean-plugin>3.0.0</version.clean-plugin>
+        <version.compiler-plugin>3.5.1</version.compiler-plugin>
+        <version.dependency-plugin>2.10</version.dependency-plugin>
         <version.dependency-versions-check>2.0.2</version.dependency-versions-check>
         <version.deploy-plugin>2.8.2</version.deploy-plugin>
-        <version.doap-plugin>1.1</version.doap-plugin>
-        <version.docck-plugin>1.0</version.docck-plugin>
+        <version.doap-plugin>1.2</version.doap-plugin>
+        <version.docck-plugin>1.1</version.docck-plugin>
         <version.doxia-module-markdown>1.5</version.doxia-module-markdown>
-        <version.duplicate-finder-plugin>1.0.7</version.duplicate-finder-plugin>
-        <version.ear-plugin>2.9.1</version.ear-plugin>
-        <version.ejb-plugin>2.4</version.ejb-plugin>
-        <version.enforcer-plugin>1.3.1</version.enforcer-plugin>
-        <version.failsafe-plugin>2.17</version.failsafe-plugin>
-        <version.findbugs-plugin>3.0.0</version.findbugs-plugin>
-        <version.gpg-plugin>1.5</version.gpg-plugin>
+        <version.duplicate-finder-plugin>1.0.9</version.duplicate-finder-plugin>
+        <version.ear-plugin>2.10.1</version.ear-plugin>
+        <version.ejb-plugin>2.5.1</version.ejb-plugin>
+        <version.enforcer-plugin>1.4.1</version.enforcer-plugin>
+        <version.failsafe-plugin>2.19.1</version.failsafe-plugin>
+        <version.findbugs-plugin>3.0.3</version.findbugs-plugin>
+        <version.gpg-plugin>1.6</version.gpg-plugin>
         <version.help-plugin>2.2</version.help-plugin>
         <version.install-plugin>2.5.2</version.install-plugin>
-        <version.invoker-plugin>1.9</version.invoker-plugin>
-        <version.jacoco-plugin>0.7.1.201405082137</version.jacoco-plugin>
-        <version.jar-plugin>2.5</version.jar-plugin>
-        <version.jarsigner-plugin>1.3.2</version.jarsigner-plugin>
-        <version.javadoc-plugin>2.9.1</version.javadoc-plugin>
-        <version.jboss-as-plugin>7.6.Final</version.jboss-as-plugin>
-        <version.jxr-plugin>2.4</version.jxr-plugin>
-        <version.license-plugin>2.6</version.license-plugin>
-        <version.linkcheck-plugin>1.1</version.linkcheck-plugin>
-        <version.patch-plugin>1.1.1</version.patch-plugin>
-        <version.pdf-plugin>1.2</version.pdf-plugin>
+        <version.invoker-plugin>2.0.0</version.invoker-plugin>
+        <version.jacoco-plugin>0.7.6.201602180812</version.jacoco-plugin>
+        <version.jar-plugin>3.0.0</version.jar-plugin>
+        <version.jarsigner-plugin>1.4</version.jarsigner-plugin>
+        <version.javadoc-plugin>2.10.3</version.javadoc-plugin>
+        <version.jboss-as-plugin>7.7.Final</version.jboss-as-plugin>
+        <version.jxr-plugin>2.5</version.jxr-plugin>
+        <version.license-plugin>2.11</version.license-plugin>
+        <version.linkcheck-plugin>1.2</version.linkcheck-plugin>
+        <version.patch-plugin>1.2</version.patch-plugin>
+        <version.pdf-plugin>1.3</version.pdf-plugin>
         <version.pedantic-pom-enforcers>1.1.2</version.pedantic-pom-enforcers>
-        <version.plugin-plugin>3.3</version.plugin-plugin>
-        <version.pmd-plugin>3.2</version.pmd-plugin>
+        <version.plugin-plugin>3.4</version.plugin-plugin>
+        <version.pmd-plugin>3.6</version.pmd-plugin>
         <version.pmd>5.1.1</version.pmd>
         <version.pom-build-support>1.0-SNAPSHOT</version.pom-build-support>
-        <version.project-info-reports-plugin>2.7</version.project-info-reports-plugin>
+        <version.project-info-reports-plugin>2.9</version.project-info-reports-plugin>
         <version.rar-plugin>2.4</version.rar-plugin>
         <version.reactor-plugin>1.1</version.reactor-plugin>
-        <version.release-plugin>2.5</version.release-plugin>
+        <version.release-plugin>2.5.3</version.release-plugin>
         <version.remote-resources-plugin>1.5</version.remote-resources-plugin>
-        <version.repository-plugin>2.3.1</version.repository-plugin>
-        <version.resources-plugin>2.6</version.resources-plugin>
-        <version.scm-plugin>1.9.1</version.scm-plugin>
+        <version.repository-plugin>2.4</version.repository-plugin>
+        <version.resources-plugin>3.0.0</version.resources-plugin>
+        <version.scm-plugin>1.9.4</version.scm-plugin>
         <version.scm-publish-plugin>1.1</version.scm-publish-plugin>
-        <version.shade-plugin>2.3</version.shade-plugin>
-        <version.site-plugin>3.4</version.site-plugin>
-        <version.source-plugin>2.3</version.source-plugin>
-        <version.stage-plugin>1.0-alpha-2</version.stage-plugin>
-        <version.surefire-plugin>2.17</version.surefire-plugin>
+        <version.shade-plugin>2.4.3</version.shade-plugin>
+        <version.site-plugin>3.5.1</version.site-plugin>
+        <version.source-plugin>3.0.0</version.source-plugin>
+        <version.stage-plugin>1.0</version.stage-plugin>
+        <version.surefire-plugin>2.19.1</version.surefire-plugin>
         <version.surefire-report-plugin>${version.surefire-plugin}</version.surefire-report-plugin>
         <version.taglist-plugin>2.4</version.taglist-plugin>
-        <version.toolchains-plugin>1.0</version.toolchains-plugin>
-        <version.verifier-plugin>1.0</version.verifier-plugin>
-        <version.versions-plugin>2.1</version.versions-plugin>
-        <version.war-plugin>2.4</version.war-plugin>
+        <version.toolchains-plugin>1.1</version.toolchains-plugin>
+        <version.verifier-plugin>1.1</version.verifier-plugin>
+        <version.versions-plugin>2.2</version.versions-plugin>
+        <version.war-plugin>2.6</version.war-plugin>
     </properties>
 
     <build>
