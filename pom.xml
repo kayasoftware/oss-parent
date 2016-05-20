@@ -303,6 +303,7 @@
         <version.enforcer-plugin>1.4.1</version.enforcer-plugin>
         <version.failsafe-plugin>2.19.1</version.failsafe-plugin>
         <version.findbugs-plugin>3.0.3</version.findbugs-plugin>
+        <version.fluido-skin>1.5</version.fluido-skin>
         <version.gpg-plugin>1.6</version.gpg-plugin>
         <version.help-plugin>2.2</version.help-plugin>
         <version.install-plugin>2.5.2</version.install-plugin>
@@ -1049,6 +1050,13 @@
                             <groupId>org.apache.maven.doxia</groupId>
                             <artifactId>doxia-module-markdown</artifactId>
                             <version>${version.doxia-module-markdown}</version>
+                        </dependency>
+                        <!-- Including Fluido Skin only to be notified of version -->
+                        <!-- updates on site page and via Maven versions plugin -->
+                        <dependency>
+                            <groupId>org.apache.maven.skins</groupId>
+                            <artifactId>maven-fluido-skin</artifactId>
+                            <version>${version.fluido-skin}</version>
                         </dependency>
                     </dependencies>
                 </plugin>
