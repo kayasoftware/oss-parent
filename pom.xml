@@ -120,11 +120,11 @@
 
         <!-- Set build timestamp format -->
         <!-- Note: Has to comply with the rules given in the API documentation for SimpleDateFormat -->
-        <maven.build.timestamp.format>yyyy-MM-dd'T'HH:mm:ss.SSSZ</maven.build.timestamp.format>
+        <maven.build.timestamp.format>yyyy-MM-dd'T'HH:mm:ss.SSS'Z'</maven.build.timestamp.format>
 
         <!-- Define new properties that will be set by the buildnumber-maven-plugin to use in resource filtering -->
         <build.number>${buildNumber}</build.number>
-        <build.timestamp>${timestamp}</build.timestamp>
+        <build.timestamp>${maven.build.timestamp}</build.timestamp>
 
         <!-- *************************************** -->
         <!--  POM specific configuration properties -->
@@ -1203,7 +1203,6 @@
                     <artifactId>buildnumber-maven-plugin</artifactId>
                     <version>${version.buildnumber-plugin}</version>
                     <configuration>
-                        <timestampFormat>{0,date,${maven.build.timestamp.format}}</timestampFormat>
                         <revisionOnScmFailure>UNKNOWN</revisionOnScmFailure>
                         <getRevisionOnlyOnce>true</getRevisionOnlyOnce>
                         <shortRevisionLength>7</shortRevisionLength>
