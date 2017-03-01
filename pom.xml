@@ -816,7 +816,7 @@
                                 <Os-Version>${os.version}</Os-Version>
                                 <Scm-Url>${project.scm.url}</Scm-Url>
                                 <Scm-Connection>${project.scm.connection}</Scm-Connection>
-                                <Scm-Revision>${buildNumber}</Scm-Revision>
+                                <Scm-Revision>${build.number}</Scm-Revision>
                                 <Build-Timestamp>${build.timestamp}</Build-Timestamp>
                             </manifestEntries>
                         </archive>
@@ -865,7 +865,7 @@
                                 <Os-Version>${os.version}</Os-Version>
                                 <Scm-Url>${project.scm.url}</Scm-Url>
                                 <Scm-Connection>${project.scm.connection}</Scm-Connection>
-                                <Scm-Revision>${buildNumber}</Scm-Revision>
+                                <Scm-Revision>${build.number}</Scm-Revision>
                                 <Build-Timestamp>${build.timestamp}</Build-Timestamp>
                             </manifestEntries>
                         </archive>
@@ -1074,7 +1074,7 @@
                                 <Os-Version>${os.version}</Os-Version>
                                 <Scm-Url>${project.scm.url}</Scm-Url>
                                 <Scm-Connection>${project.scm.connection}</Scm-Connection>
-                                <Scm-Revision>${buildNumber}</Scm-Revision>
+                                <Scm-Revision>${build.number}</Scm-Revision>
                                 <Build-Timestamp>${build.timestamp}</Build-Timestamp>
                             </manifestEntries>
                         </archive>
@@ -1155,7 +1155,7 @@
                                 <Os-Version>${os.version}</Os-Version>
                                 <Scm-Url>${project.scm.url}</Scm-Url>
                                 <Scm-Connection>${project.scm.connection}</Scm-Connection>
-                                <Scm-Revision>${buildNumber}</Scm-Revision>
+                                <Scm-Revision>${build.number}</Scm-Revision>
                                 <Build-Timestamp>${build.timestamp}</Build-Timestamp>
                             </manifestEntries>
                         </archive>
