@@ -279,69 +279,69 @@
         <!--  Plugin version properties  -->
         <!-- *************************** -->
 
-        <version.acr-plugin>3.0.0</version.acr-plugin>
-        <version.ant-plugin>2.4</version.ant-plugin>
-        <version.antrun-plugin>1.8</version.antrun-plugin>
-        <version.archetype-plugin>2.4</version.archetype-plugin>
-        <version.assembly-plugin>2.6</version.assembly-plugin>
-        <version.build-helper-plugin>1.10</version.build-helper-plugin>
-        <version.buildnumber-plugin>1.4</version.buildnumber-plugin>
-        <version.changelog-plugin>2.3</version.changelog-plugin>
-        <version.changes-plugin>2.12</version.changes-plugin>
-        <version.checkstyle-plugin>2.17</version.checkstyle-plugin>
-        <version.clean-plugin>3.0.0</version.clean-plugin>
-        <version.compiler-plugin>3.5.1</version.compiler-plugin>
-        <version.dependency-plugin>2.10</version.dependency-plugin>
-        <version.dependency-versions-check>2.0.2</version.dependency-versions-check>
-        <version.deploy-plugin>2.8.2</version.deploy-plugin>
-        <version.doap-plugin>1.2</version.doap-plugin>
-        <version.docck-plugin>1.1</version.docck-plugin>
-        <version.doxia-module-markdown>1.7</version.doxia-module-markdown>
-        <version.duplicate-finder-plugin>1.2.1</version.duplicate-finder-plugin>
-        <version.ear-plugin>2.10.1</version.ear-plugin>
-        <version.ejb-plugin>2.5.1</version.ejb-plugin>
-        <version.enforcer-plugin>1.4.1</version.enforcer-plugin>
-        <version.failsafe-plugin>2.19.1</version.failsafe-plugin>
-        <version.findbugs-plugin>3.0.3</version.findbugs-plugin>
-        <version.fluido-skin>1.5</version.fluido-skin>
-        <version.gpg-plugin>1.6</version.gpg-plugin>
-        <version.help-plugin>2.2</version.help-plugin>
-        <version.install-plugin>2.5.2</version.install-plugin>
-        <version.invoker-plugin>2.0.0</version.invoker-plugin>
-        <version.jacoco-plugin>0.7.6.201602180812</version.jacoco-plugin>
-        <version.jar-plugin>3.0.0</version.jar-plugin>
-        <version.jarsigner-plugin>1.4</version.jarsigner-plugin>
-        <version.javadoc-plugin>2.10.3</version.javadoc-plugin>
-        <version.jboss-as-plugin>7.7.Final</version.jboss-as-plugin>
-        <version.jxr-plugin>2.5</version.jxr-plugin>
-        <version.license-plugin>2.11</version.license-plugin>
-        <version.linkcheck-plugin>1.2</version.linkcheck-plugin>
-        <version.patch-plugin>1.2</version.patch-plugin>
-        <version.pdf-plugin>1.3</version.pdf-plugin>
-        <version.pedantic-pom-enforcers>1.1.2</version.pedantic-pom-enforcers>
-        <version.plugin-plugin>3.4</version.plugin-plugin>
-        <version.pmd-plugin>3.6</version.pmd-plugin>
-        <version.pom-build-support>1.0-SNAPSHOT</version.pom-build-support>
-        <version.project-info-reports-plugin>2.9</version.project-info-reports-plugin>
-        <version.rar-plugin>2.4</version.rar-plugin>
-        <version.reactor-plugin>1.1</version.reactor-plugin>
-        <version.release-plugin>2.5.3</version.release-plugin>
-        <version.remote-resources-plugin>1.5</version.remote-resources-plugin>
-        <version.repository-plugin>2.4</version.repository-plugin>
-        <version.resources-plugin>3.0.0</version.resources-plugin>
-        <version.scm-plugin>1.9.4</version.scm-plugin>
-        <version.scm-publish-plugin>1.1</version.scm-publish-plugin>
-        <version.shade-plugin>2.4.3</version.shade-plugin>
-        <version.site-plugin>3.5.1</version.site-plugin>
-        <version.source-plugin>3.0.0</version.source-plugin>
-        <version.stage-plugin>1.0</version.stage-plugin>
-        <version.surefire-plugin>2.19.1</version.surefire-plugin>
-        <version.surefire-report-plugin>${version.surefire-plugin}</version.surefire-report-plugin>
-        <version.taglist-plugin>2.4</version.taglist-plugin>
-        <version.toolchains-plugin>1.1</version.toolchains-plugin>
-        <version.verifier-plugin>1.1</version.verifier-plugin>
-        <version.versions-plugin>2.2</version.versions-plugin>
-        <version.war-plugin>2.6</version.war-plugin>
+        <plugin.version.acr-plugin>3.0.0</plugin.version.acr-plugin>
+        <plugin.version.ant-plugin>2.4</plugin.version.ant-plugin>
+        <plugin.version.antrun-plugin>1.8</plugin.version.antrun-plugin>
+        <plugin.version.archetype-plugin>2.4</plugin.version.archetype-plugin>
+        <plugin.version.assembly-plugin>2.6</plugin.version.assembly-plugin>
+        <plugin.version.build-helper-plugin>1.10</plugin.version.build-helper-plugin>
+        <plugin.version.buildnumber-plugin>1.4</plugin.version.buildnumber-plugin>
+        <plugin.version.changelog-plugin>2.3</plugin.version.changelog-plugin>
+        <plugin.version.changes-plugin>2.12</plugin.version.changes-plugin>
+        <plugin.version.checkstyle-plugin>2.17</plugin.version.checkstyle-plugin>
+        <plugin.version.clean-plugin>3.0.0</plugin.version.clean-plugin>
+        <plugin.version.compiler-plugin>3.5.1</plugin.version.compiler-plugin>
+        <plugin.version.dependency-plugin>2.10</plugin.version.dependency-plugin>
+        <plugin.version.dependency-versions-check>2.0.2</plugin.version.dependency-versions-check>
+        <plugin.version.deploy-plugin>2.8.2</plugin.version.deploy-plugin>
+        <plugin.version.doap-plugin>1.2</plugin.version.doap-plugin>
+        <plugin.version.docck-plugin>1.1</plugin.version.docck-plugin>
+        <plugin.version.doxia-module-markdown>1.7</plugin.version.doxia-module-markdown>
+        <plugin.version.duplicate-finder-plugin>1.2.1</plugin.version.duplicate-finder-plugin>
+        <plugin.version.ear-plugin>2.10.1</plugin.version.ear-plugin>
+        <plugin.version.ejb-plugin>2.5.1</plugin.version.ejb-plugin>
+        <plugin.version.enforcer-plugin>1.4.1</plugin.version.enforcer-plugin>
+        <plugin.version.failsafe-plugin>2.19.1</plugin.version.failsafe-plugin>
+        <plugin.version.findbugs-plugin>3.0.3</plugin.version.findbugs-plugin>
+        <plugin.version.fluido-skin>1.5</plugin.version.fluido-skin>
+        <plugin.version.gpg-plugin>1.6</plugin.version.gpg-plugin>
+        <plugin.version.help-plugin>2.2</plugin.version.help-plugin>
+        <plugin.version.install-plugin>2.5.2</plugin.version.install-plugin>
+        <plugin.version.invoker-plugin>2.0.0</plugin.version.invoker-plugin>
+        <plugin.version.jacoco-plugin>0.7.6.201602180812</plugin.version.jacoco-plugin>
+        <plugin.version.jar-plugin>3.0.0</plugin.version.jar-plugin>
+        <plugin.version.jarsigner-plugin>1.4</plugin.version.jarsigner-plugin>
+        <plugin.version.javadoc-plugin>2.10.3</plugin.version.javadoc-plugin>
+        <plugin.version.jboss-as-plugin>7.7.Final</plugin.version.jboss-as-plugin>
+        <plugin.version.jxr-plugin>2.5</plugin.version.jxr-plugin>
+        <plugin.version.license-plugin>2.11</plugin.version.license-plugin>
+        <plugin.version.linkcheck-plugin>1.2</plugin.version.linkcheck-plugin>
+        <plugin.version.patch-plugin>1.2</plugin.version.patch-plugin>
+        <plugin.version.pdf-plugin>1.3</plugin.version.pdf-plugin>
+        <plugin.version.pedantic-pom-enforcers>1.1.2</plugin.version.pedantic-pom-enforcers>
+        <plugin.version.plugin-plugin>3.4</plugin.version.plugin-plugin>
+        <plugin.version.pmd-plugin>3.6</plugin.version.pmd-plugin>
+        <plugin.version.pom-build-support>1.0-SNAPSHOT</plugin.version.pom-build-support>
+        <plugin.version.project-info-reports-plugin>2.9</plugin.version.project-info-reports-plugin>
+        <plugin.version.rar-plugin>2.4</plugin.version.rar-plugin>
+        <plugin.version.reactor-plugin>1.1</plugin.version.reactor-plugin>
+        <plugin.version.release-plugin>2.5.3</plugin.version.release-plugin>
+        <plugin.version.remote-resources-plugin>1.5</plugin.version.remote-resources-plugin>
+        <plugin.version.repository-plugin>2.4</plugin.version.repository-plugin>
+        <plugin.version.resources-plugin>3.0.0</plugin.version.resources-plugin>
+        <plugin.version.scm-plugin>1.9.4</plugin.version.scm-plugin>
+        <plugin.version.scm-publish-plugin>1.1</plugin.version.scm-publish-plugin>
+        <plugin.version.shade-plugin>2.4.3</plugin.version.shade-plugin>
+        <plugin.version.site-plugin>3.5.1</plugin.version.site-plugin>
+        <plugin.version.source-plugin>3.0.0</plugin.version.source-plugin>
+        <plugin.version.stage-plugin>1.0</plugin.version.stage-plugin>
+        <plugin.version.surefire-plugin>2.19.1</plugin.version.surefire-plugin>
+        <plugin.version.surefire-report-plugin>${plugin.version.surefire-plugin}</plugin.version.surefire-report-plugin>
+        <plugin.version.taglist-plugin>2.4</plugin.version.taglist-plugin>
+        <plugin.version.toolchains-plugin>1.1</plugin.version.toolchains-plugin>
+        <plugin.version.verifier-plugin>1.1</plugin.version.verifier-plugin>
+        <plugin.version.versions-plugin>2.2</plugin.version.versions-plugin>
+        <plugin.version.war-plugin>2.6</plugin.version.war-plugin>
     </properties>
 
     <build>
@@ -352,7 +352,7 @@
                 <!--  license-maven-plugin to resolve approved license files -->
                 <groupId>com.kayasoftware.pom</groupId>
                 <artifactId>build-support</artifactId>
-                <version>${version.pom-build-support}</version>
+                <version>${plugin.version.pom-build-support}</version>
             </extension>
         </extensions>
 
@@ -361,7 +361,7 @@
                 <plugin>
                     <groupId>com.mycila</groupId>
                     <artifactId>license-maven-plugin</artifactId>
-                    <version>${version.license-plugin}</version>
+                    <version>${plugin.version.license-plugin}</version>
                     <configuration>
                         <skip>${config.check.skipLicense}</skip>
                         <skipExistingHeaders>true</skipExistingHeaders>
@@ -408,7 +408,7 @@
                 <plugin>
                     <groupId>com.ning.maven.plugins</groupId>
                     <artifactId>maven-dependency-versions-check-plugin</artifactId>
-                    <version>${version.dependency-versions-check}</version>
+                    <version>${plugin.version.dependency-versions-check}</version>
                     <configuration>
                         <skip>${config.check.skipDependencyVersionsCheck}</skip>
                         <failBuildInCaseOfConflict>${config.check.failDependencyVersionsCheck}</failBuildInCaseOfConflict>
@@ -428,35 +428,35 @@
                     <!-- Build a JavaEE application client from the current project -->
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-acr-plugin</artifactId>
-                    <version>${version.acr-plugin}</version>
+                    <version>${plugin.version.acr-plugin}</version>
                 </plugin>
 
                 <plugin>
                     <!-- Generate an Ant build file for the project -->
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-ant-plugin</artifactId>
-                    <version>${version.ant-plugin}</version>
+                    <version>${plugin.version.ant-plugin}</version>
                 </plugin>
 
                 <plugin>
                     <!-- Run a set of ant tasks from a phase of the build -->
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-antrun-plugin</artifactId>
-                    <version>${version.antrun-plugin}</version>
+                    <version>${plugin.version.antrun-plugin}</version>
                 </plugin>
 
                 <plugin>
                     <!-- Generate a skeleton project structure from an archetype -->
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-archetype-plugin</artifactId>
-                    <version>${version.archetype-plugin}</version>
+                    <version>${plugin.version.archetype-plugin}</version>
                 </plugin>
 
                 <plugin>
                     <!-- Build an assembly (distribution) of sources and/or binaries -->
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-assembly-plugin</artifactId>
-                    <version>${version.assembly-plugin}</version>
+                    <version>${plugin.version.assembly-plugin}</version>
                     <configuration>
                         <!-- Always use GNU tar mode. -->
                         <tarLongFileMode>gnu</tarLongFileMode>
@@ -467,21 +467,21 @@
                     <!-- Generate a list of recent changes from your SCM  -->
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-changelog-plugin</artifactId>
-                    <version>${version.changelog-plugin}</version>
+                    <version>${plugin.version.changelog-plugin}</version>
                 </plugin>
 
                 <plugin>
                     <!-- Generate a report from an issue tracker or a change document (also build) -->
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-changes-plugin</artifactId>
-                    <version>${version.changes-plugin}</version>
+                    <version>${plugin.version.changes-plugin}</version>
                 </plugin>
 
                 <plugin>
                     <!-- Generate a Checkstyle report (also build) -->
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-checkstyle-plugin</artifactId>
-                    <version>${version.checkstyle-plugin}</version>
+                    <version>${plugin.version.checkstyle-plugin}</version>
                     <configuration>
                         <configLocation>${config.checkstyle.location}</configLocation>
                         <failOnViolation>${config.check.failCheckstyle}</failOnViolation>
@@ -503,14 +503,14 @@
                     <!-- Clean up after the build -->
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-clean-plugin</artifactId>
-                    <version>${version.clean-plugin}</version>
+                    <version>${plugin.version.clean-plugin}</version>
                 </plugin>
 
                 <plugin>
                     <!-- Compiles Java sources -->
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
-                    <version>${version.compiler-plugin}</version>
+                    <version>${plugin.version.compiler-plugin}</version>
                     <configuration>
                         <maxmem>${config.build.jvmsize}</maxmem>
                         <compilerArgs>
@@ -525,7 +525,7 @@
                     <!-- Dependency manipulation (copy, unpack) and analysis -->
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-dependency-plugin</artifactId>
-                    <version>${version.dependency-plugin}</version>
+                    <version>${plugin.version.dependency-plugin}</version>
                     <configuration>
                         <skip>${config.check.skipDependency}</skip>
                         <failOnWarning>${config.check.failDependency}</failOnWarning>
@@ -548,7 +548,7 @@
                     <!-- Deploy the built artifact to the remote repository -->
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-deploy-plugin</artifactId>
-                    <version>${version.deploy-plugin}</version>
+                    <version>${plugin.version.deploy-plugin}</version>
                     <configuration>
                         <deployAtEnd>true</deployAtEnd>
                     </configuration>
@@ -558,35 +558,35 @@
                     <!-- Generate a Description of a Project (DOAP) file from a POM -->
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-doap-plugin</artifactId>
-                    <version>${version.doap-plugin}</version>
+                    <version>${plugin.version.doap-plugin}</version>
                 </plugin>
 
                 <plugin>
                     <!-- Documentation checker plugin -->
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-docck-plugin</artifactId>
-                    <version>${version.docck-plugin}</version>
+                    <version>${plugin.version.docck-plugin}</version>
                 </plugin>
 
                 <plugin>
                     <!-- Generate an EAR from the current project. -->
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-ear-plugin</artifactId>
-                    <version>${version.ear-plugin}</version>
+                    <version>${plugin.version.ear-plugin}</version>
                 </plugin>
 
                 <plugin>
                     <!-- Build an EJB (and optional client) from the current project -->
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-ejb-plugin</artifactId>
-                    <version>${version.ejb-plugin}</version>
+                    <version>${plugin.version.ejb-plugin}</version>
                 </plugin>
 
                 <plugin>
                     <!-- Environmental constraint checking (Maven Version, JDK etc), User Custom Rule Execution -->
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-enforcer-plugin</artifactId>
-                    <version>${version.enforcer-plugin}</version>
+                    <version>${plugin.version.enforcer-plugin}</version>
                     <executions>
                         <execution>
                             <id>default</id>
@@ -740,7 +740,7 @@
                         <dependency>
                             <groupId>com.github.ferstl</groupId>
                             <artifactId>pedantic-pom-enforcers</artifactId>
-                            <version>${version.pedantic-pom-enforcers}</version>
+                            <version>${plugin.version.pedantic-pom-enforcers}</version>
                         </dependency>
                     </dependencies>
                 </plugin>
@@ -749,14 +749,14 @@
                     <!-- Run the JUnit integration tests in an isolated classloader -->
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-failsafe-plugin</artifactId>
-                    <version>${version.failsafe-plugin}</version>
+                    <version>${plugin.version.failsafe-plugin}</version>
                 </plugin>
 
                 <plugin>
                     <!-- Create signatures for the artifacts and poms -->
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-gpg-plugin</artifactId>
-                    <version>${version.gpg-plugin}</version>
+                    <version>${plugin.version.gpg-plugin}</version>
                     <configuration>
                         <useAgent>true</useAgent>
                     </configuration>
@@ -775,14 +775,14 @@
                     <!-- Get information about the working environment for the project -->
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-help-plugin</artifactId>
-                    <version>${version.help-plugin}</version>
+                    <version>${plugin.version.help-plugin}</version>
                 </plugin>
 
                 <plugin>
                     <!-- Install the built artifact into the local repository -->
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-install-plugin</artifactId>
-                    <version>${version.install-plugin}</version>
+                    <version>${plugin.version.install-plugin}</version>
                     <configuration>
                         <installAtEnd>true</installAtEnd>
                     </configuration>
@@ -792,14 +792,14 @@
                     <!-- Run a set of Maven projects and verify the output. -->
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-invoker-plugin</artifactId>
-                    <version>${version.invoker-plugin}</version>
+                    <version>${plugin.version.invoker-plugin}</version>
                 </plugin>
 
                 <plugin>
                     <!-- Build a JAR from the current project -->
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-jar-plugin</artifactId>
-                    <version>${version.jar-plugin}</version>
+                    <version>${plugin.version.jar-plugin}</version>
                     <configuration>
                         <skipIfEmpty>true</skipIfEmpty>
                         <archive>
@@ -838,14 +838,14 @@
                     <!-- Signs or verifies project artifacts -->
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-jarsigner-plugin</artifactId>
-                    <version>${version.jarsigner-plugin}</version>
+                    <version>${plugin.version.jarsigner-plugin}</version>
                 </plugin>
 
                 <plugin>
                     <!-- Generate Javadoc for the project (also build) -->
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-javadoc-plugin</artifactId>
-                    <version>${version.javadoc-plugin}</version>
+                    <version>${plugin.version.javadoc-plugin}</version>
                     <configuration>
                         <header><![CDATA[<b>${project.name} ${project.version}</b>]]></header>
                         <footer><![CDATA[<b>${project.name} ${project.version}</b>]]></footer>
@@ -886,42 +886,42 @@
                     <!-- Generate a source cross reference -->
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-jxr-plugin</artifactId>
-                    <version>${version.jxr-plugin}</version>
+                    <version>${plugin.version.jxr-plugin}</version>
                 </plugin>
 
                 <plugin>
                     <!-- Generate a Linkcheck report of your project's documentation -->
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-linkcheck-plugin</artifactId>
-                    <version>${version.linkcheck-plugin}</version>
+                    <version>${plugin.version.linkcheck-plugin}</version>
                 </plugin>
 
                 <plugin>
                     <!-- Use the gnu patch tool to apply patch files to source code -->
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-patch-plugin</artifactId>
-                    <version>${version.patch-plugin}</version>
+                    <version>${plugin.version.patch-plugin}</version>
                 </plugin>
 
                 <plugin>
                     <!-- Generate a PDF version of your project's documentation -->
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-pdf-plugin</artifactId>
-                    <version>${version.pdf-plugin}</version>
+                    <version>${plugin.version.pdf-plugin}</version>
                 </plugin>
 
                 <plugin>
                     <!-- Create a Maven plugin descriptor for any mojos found in the source tree, to include in the JAR -->
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-plugin-plugin</artifactId>
-                    <version>${version.plugin-plugin}</version>
+                    <version>${plugin.version.plugin-plugin}</version>
                 </plugin>
 
                 <plugin>
                     <!-- Generate a PMD report (also build) -->
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-pmd-plugin</artifactId>
-                    <version>${version.pmd-plugin}</version>
+                    <version>${plugin.version.pmd-plugin}</version>
                     <configuration>
                         <skip>${config.check.skipPmd}</skip>
                         <failOnViolation>${config.check.failPmd}</failOnViolation>
@@ -945,28 +945,28 @@
                     <!-- Generate standard project reports -->
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-project-info-reports-plugin</artifactId>
-                    <version>${version.project-info-reports-plugin}</version>
+                    <version>${plugin.version.project-info-reports-plugin}</version>
                 </plugin>
 
                 <plugin>
                     <!-- Build a RAR from the current project -->
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-rar-plugin</artifactId>
-                    <version>${version.rar-plugin}</version>
+                    <version>${plugin.version.rar-plugin}</version>
                 </plugin>
 
                 <plugin>
                     <!-- Build a subset of interdependent projects in a reactor -->
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-reactor-plugin</artifactId>
-                    <version>${version.reactor-plugin}</version>
+                    <version>${plugin.version.reactor-plugin}</version>
                 </plugin>
 
                 <plugin>
                     <!-- Release the current project - updating the POM and tagging in the SCM -->
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-release-plugin</artifactId>
-                    <version>${version.release-plugin}</version>
+                    <version>${plugin.version.release-plugin}</version>
                     <configuration>
                         <arguments combine.self="override" />
                         <autoVersionSubmodules>true</autoVersionSubmodules>
@@ -984,28 +984,28 @@
                     <!-- Copy remote resources to the output directory for inclusion in the artifact -->
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-remote-resources-plugin</artifactId>
-                    <version>${version.remote-resources-plugin}</version>
+                    <version>${plugin.version.remote-resources-plugin}</version>
                 </plugin>
 
                 <plugin>
                     <!-- Plugin to help with repository-based tasks -->
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-repository-plugin</artifactId>
-                    <version>${version.repository-plugin}</version>
+                    <version>${plugin.version.repository-plugin}</version>
                 </plugin>
 
                 <plugin>
                     <!-- Copy the resources to the output directory for including in the JAR -->
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-resources-plugin</artifactId>
-                    <version>${version.resources-plugin}</version>
+                    <version>${plugin.version.resources-plugin}</version>
                 </plugin>
 
                 <plugin>
                     <!-- Execute SCM commands for the current project -->
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-scm-plugin</artifactId>
-                    <version>${version.scm-plugin}</version>
+                    <version>${plugin.version.scm-plugin}</version>
                     <configuration>
                         <connectionType>developerConnection</connectionType>
                     </configuration>
@@ -1016,7 +1016,7 @@
                     <!-- Publish your Maven website to a scm location -->
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-scm-publish-plugin</artifactId>
-                    <version>${version.scm-publish-plugin}</version>
+                    <version>${plugin.version.scm-publish-plugin}</version>
                     <configuration>
                         <scmBranch>gh-pages</scmBranch>
                     </configuration>
@@ -1026,14 +1026,14 @@
                     <!-- Build an Uber-JAR from the current project, including dependencies -->
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-shade-plugin</artifactId>
-                    <version>${version.shade-plugin}</version>
+                    <version>${plugin.version.shade-plugin}</version>
                 </plugin>
 
                 <plugin>
                     <!-- Generate a site for the current project -->
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-site-plugin</artifactId>
-                    <version>${version.site-plugin}</version>
+                    <version>${plugin.version.site-plugin}</version>
                     <configuration>
                         <locales>en</locales>
                         <!-- We are deploying site using scm-publish. -->
@@ -1054,14 +1054,14 @@
                         <dependency>
                             <groupId>org.apache.maven.doxia</groupId>
                             <artifactId>doxia-module-markdown</artifactId>
-                            <version>${version.doxia-module-markdown}</version>
+                            <version>${plugin.version.doxia-module-markdown}</version>
                         </dependency>
                         <!-- Including Fluido Skin only to be notified of version -->
                         <!-- updates on site page and via Maven versions plugin -->
                         <dependency>
                             <groupId>org.apache.maven.skins</groupId>
                             <artifactId>maven-fluido-skin</artifactId>
-                            <version>${version.fluido-skin}</version>
+                            <version>${plugin.version.fluido-skin}</version>
                         </dependency>
                     </dependencies>
                 </plugin>
@@ -1070,7 +1070,7 @@
                     <!-- Build a JAR of sources for use in IDEs and distribution to the repository -->
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-source-plugin</artifactId>
-                    <version>${version.source-plugin}</version>
+                    <version>${plugin.version.source-plugin}</version>
                     <configuration>
                         <archive>
                             <index>true</index>
@@ -1108,14 +1108,14 @@
                     <!-- Assists with release staging and promotion -->
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-stage-plugin</artifactId>
-                    <version>${version.stage-plugin}</version>
+                    <version>${plugin.version.stage-plugin}</version>
                 </plugin>
 
                 <plugin>
                     <!-- Run the JUnit unit tests in an isolated classloader -->
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-surefire-plugin</artifactId>
-                    <version>${version.surefire-plugin}</version>
+                    <version>${plugin.version.surefire-plugin}</version>
                     <configuration>
                         <systemPropertyVariables>
                             <user.timezone>UTC</user.timezone>
@@ -1131,28 +1131,28 @@
                     <!-- Generate a report based on the results of unit tests -->
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-surefire-report-plugin</artifactId>
-                    <version>${version.surefire-report-plugin}</version>
+                    <version>${plugin.version.surefire-report-plugin}</version>
                 </plugin>
 
                 <plugin>
                     <!-- Allows to share configuration across plugins -->
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-toolchains-plugin</artifactId>
-                    <version>${version.toolchains-plugin}</version>
+                    <version>${plugin.version.toolchains-plugin}</version>
                 </plugin>
 
                 <plugin>
                     <!-- Useful for integration tests - verifies the existence of certain conditions. -->
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-verifier-plugin</artifactId>
-                    <version>${version.verifier-plugin}</version>
+                    <version>${plugin.version.verifier-plugin}</version>
                 </plugin>
 
                 <plugin>
                     <!-- Build a WAR from the current project. -->
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-war-plugin</artifactId>
-                    <version>${version.war-plugin}</version>
+                    <version>${plugin.version.war-plugin}</version>
                     <configuration>
                         <archive>
                             <manifest>
@@ -1180,7 +1180,7 @@
                 <plugin>
                     <groupId>org.basepom.maven</groupId>
                     <artifactId>duplicate-finder-maven-plugin</artifactId>
-                    <version>${version.duplicate-finder-plugin}</version>
+                    <version>${plugin.version.duplicate-finder-plugin}</version>
                     <executions>
                         <execution>
                             <id>default</id>
@@ -1207,7 +1207,7 @@
                     <!-- Various small independent goals to assist with the Maven build lifecycle -->
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>build-helper-maven-plugin</artifactId>
-                    <version>${version.build-helper-plugin}</version>
+                    <version>${plugin.version.build-helper-plugin}</version>
                     <executions>
                         <execution>
                             <id>parse-maven-version</id>
@@ -1223,7 +1223,7 @@
                     <!-- Get a unique build number each time you build your project -->
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>buildnumber-maven-plugin</artifactId>
-                    <version>${version.buildnumber-plugin}</version>
+                    <version>${plugin.version.buildnumber-plugin}</version>
                     <configuration>
                         <revisionOnScmFailure>UNKNOWN</revisionOnScmFailure>
                         <getRevisionOnlyOnce>true</getRevisionOnlyOnce>
@@ -1244,7 +1244,7 @@
                     <!-- Generate a findbugs report -->
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>findbugs-maven-plugin</artifactId>
-                    <version>${version.findbugs-plugin}</version>
+                    <version>${plugin.version.findbugs-plugin}</version>
                     <configuration>
                         <skip>${config.check.skipFindbugs}</skip>
                         <jvmArgs>-Xmx${config.build.jvmsize}</jvmArgs>
@@ -1266,21 +1266,21 @@
                     <!-- Generate a report on various tags found in the code -->
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>taglist-maven-plugin</artifactId>
-                    <version>${version.taglist-plugin}</version>
+                    <version>${plugin.version.taglist-plugin}</version>
                 </plugin>
 
                 <plugin>
                     <!-- Updates the versions of components in the POM -->
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>versions-maven-plugin</artifactId>
-                    <version>${version.versions-plugin}</version>
+                    <version>${plugin.version.versions-plugin}</version>
                 </plugin>
 
                 <plugin>
                     <!-- Generate a JaCoCo code coverage report -->
                     <groupId>org.jacoco</groupId>
                     <artifactId>jacoco-maven-plugin</artifactId>
-                    <version>${version.jacoco-plugin}</version>
+                    <version>${plugin.version.jacoco-plugin}</version>
                     <configuration>
                         <skip>${config.check.skipJacoco}</skip>
                     </configuration>
@@ -1320,7 +1320,7 @@
                     <!-- Deploy to JBoss Application Server 7 or higher -->
                     <groupId>org.jboss.as.plugins</groupId>
                     <artifactId>jboss-as-maven-plugin</artifactId>
-                    <version>${version.jboss-as-plugin}</version>
+                    <version>${plugin.version.jboss-as-plugin}</version>
                     <configuration>
                         <!-- specifies the name used for the deployment. -->
                         <name>${project.artifactId}.${project.packaging}</name>
@@ -1409,7 +1409,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
-                <version>${version.checkstyle-plugin}</version>
+                <version>${plugin.version.checkstyle-plugin}</version>
                 <reportSets>
                     <reportSet>
                         <id>default</id>
@@ -1429,7 +1429,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>${version.javadoc-plugin}</version>
+                <version>${plugin.version.javadoc-plugin}</version>
                 <configuration>
                     <header><![CDATA[<b>${project.name} ${project.version}</b>]]></header>
                     <footer><![CDATA[<b>${project.name} ${project.version}</b>]]></footer>
@@ -1459,7 +1459,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jxr-plugin</artifactId>
-                <version>${version.jxr-plugin}</version>
+                <version>${plugin.version.jxr-plugin}</version>
                 <reportSets>
                     <reportSet>
                         <id>default</id>
@@ -1481,7 +1481,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-pmd-plugin</artifactId>
-                <version>${version.pmd-plugin}</version>
+                <version>${plugin.version.pmd-plugin}</version>
                 <configuration>
                     <aggregate>false</aggregate>
                     <targetJdk>${maven.compiler.target}</targetJdk>
@@ -1502,7 +1502,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-project-info-reports-plugin</artifactId>
-                <version>${version.project-info-reports-plugin}</version>
+                <version>${plugin.version.project-info-reports-plugin}</version>
                 <configuration>
                     <dependencyLocationsEnabled>${dependency.locations.enabled}</dependencyLocationsEnabled>
                 </configuration>
@@ -1534,7 +1534,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-report-plugin</artifactId>
-                <version>${version.surefire-report-plugin}</version>
+                <version>${plugin.version.surefire-report-plugin}</version>
                 <configuration>
                     <aggregate>false</aggregate>
                     <alwaysGenerateSurefireReport>false</alwaysGenerateSurefireReport>
@@ -1557,7 +1557,7 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>findbugs-maven-plugin</artifactId>
-                <version>${version.findbugs-plugin}</version>
+                <version>${plugin.version.findbugs-plugin}</version>
                 <reportSets>
                     <reportSet>
                         <id>default</id>
@@ -1571,7 +1571,7 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>taglist-maven-plugin</artifactId>
-                <version>${version.taglist-plugin}</version>
+                <version>${plugin.version.taglist-plugin}</version>
                 <configuration>
                     <aggregate>false</aggregate>
                     <tagListOptions>
@@ -1610,7 +1610,7 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>versions-maven-plugin</artifactId>
-                <version>${version.versions-plugin}</version>
+                <version>${plugin.version.versions-plugin}</version>
                 <reportSets>
                     <reportSet>
                         <id>default</id>
@@ -1626,7 +1626,7 @@
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
-                <version>${version.jacoco-plugin}</version>
+                <version>${plugin.version.jacoco-plugin}</version>
                 <reportSets>
                     <reportSet>
                         <id>default</id>
