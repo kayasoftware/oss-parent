@@ -342,6 +342,11 @@
         <plugin.version.verifier-plugin>1.1</plugin.version.verifier-plugin>
         <plugin.version.versions-plugin>2.2</plugin.version.versions-plugin>
         <plugin.version.war-plugin>2.6</plugin.version.war-plugin>
+
+        <!-- ******************************* -->
+        <!--  Dependency version properties  -->
+        <!-- ******************************* -->
+        <version.checkstyle>7.6</version.checkstyle>
     </properties>
 
     <build>
@@ -482,6 +487,13 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-checkstyle-plugin</artifactId>
                     <version>${plugin.version.checkstyle-plugin}</version>
+                    <dependencies>
+                        <dependency>
+                            <groupId>com.puppycrawl.tools</groupId>
+                            <artifactId>checkstyle</artifactId>
+                            <version>7.6</version>
+                        </dependency>
+                    </dependencies>
                     <configuration>
                         <configLocation>${config.checkstyle.location}</configLocation>
                         <failOnViolation>${config.check.failCheckstyle}</failOnViolation>
