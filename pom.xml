@@ -1184,6 +1184,12 @@
                                 <Build-Timestamp>${build.timestamp}</Build-Timestamp>
                             </manifestEntries>
                         </archive>
+                        <webResources>
+                            <webResource>
+                                <directory>${basedir}/src/main/webapp</directory>
+                                <filtering>true</filtering>
+                            </webResource>
+                        </webResources>
                         <failOnMissingWebXml>false</failOnMissingWebXml>
                         <outputFileNameMapping>@{artifactId}@-@{baseVersion}@@{dashClassifier?}@.@{extension}@</outputFileNameMapping>
                     </configuration>
@@ -1414,6 +1420,13 @@
                 <artifactId>jacoco-maven-plugin</artifactId>
             </plugin>
         </plugins>
+
+        <resources>
+            <resource>
+                <directory>${basedir}/src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
     </build>
 
     <reporting>
