@@ -1195,6 +1195,15 @@
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>build-helper-maven-plugin</artifactId>
                     <version>${version.build-helper-plugin}</version>
+                    <executions>
+                        <execution>
+                            <id>parse-maven-version</id>
+                            <phase>validate</phase>
+                            <goals>
+                                <goal>parse-version</goal>
+                            </goals>
+                        </execution>
+                    </executions>
                 </plugin>
 
                 <plugin>
@@ -1338,6 +1347,11 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>build-helper-maven-plugin</artifactId>
             </plugin>
 
             <plugin>
