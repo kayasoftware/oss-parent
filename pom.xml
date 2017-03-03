@@ -296,13 +296,14 @@
         <version.deploy-plugin>2.8.2</version.deploy-plugin>
         <version.doap-plugin>1.2</version.doap-plugin>
         <version.docck-plugin>1.1</version.docck-plugin>
-        <version.doxia-module-markdown>1.5</version.doxia-module-markdown>
+        <version.doxia-module-markdown>1.7</version.doxia-module-markdown>
         <version.duplicate-finder-plugin>1.2.1</version.duplicate-finder-plugin>
         <version.ear-plugin>2.10.1</version.ear-plugin>
         <version.ejb-plugin>2.5.1</version.ejb-plugin>
         <version.enforcer-plugin>1.4.1</version.enforcer-plugin>
         <version.failsafe-plugin>2.19.1</version.failsafe-plugin>
         <version.findbugs-plugin>3.0.3</version.findbugs-plugin>
+        <version.fluido-skin>1.5</version.fluido-skin>
         <version.gpg-plugin>1.6</version.gpg-plugin>
         <version.help-plugin>2.2</version.help-plugin>
         <version.install-plugin>2.5.2</version.install-plugin>
@@ -1016,6 +1017,9 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-scm-publish-plugin</artifactId>
                     <version>${version.scm-publish-plugin}</version>
+                    <configuration>
+                        <scmBranch>gh-pages</scmBranch>
+                    </configuration>
                 </plugin>
 
                 <plugin>
@@ -1032,6 +1036,8 @@
                     <version>${version.site-plugin}</version>
                     <configuration>
                         <locales>en</locales>
+                        <!-- We are deploying site using scm-publish. -->
+                        <skipDeploy>true</skipDeploy>
                     </configuration>
                     <executions>
                         <!-- For Maven3 default execution of site:attach-descriptor has been removed from the built-in
@@ -1049,6 +1055,13 @@
                             <groupId>org.apache.maven.doxia</groupId>
                             <artifactId>doxia-module-markdown</artifactId>
                             <version>${version.doxia-module-markdown}</version>
+                        </dependency>
+                        <!-- Including Fluido Skin only to be notified of version -->
+                        <!-- updates on site page and via Maven versions plugin -->
+                        <dependency>
+                            <groupId>org.apache.maven.skins</groupId>
+                            <artifactId>maven-fluido-skin</artifactId>
+                            <version>${version.fluido-skin}</version>
                         </dependency>
                     </dependencies>
                 </plugin>
