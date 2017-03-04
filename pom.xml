@@ -311,6 +311,7 @@
         <plugin.version.jarsigner-plugin>1.4</plugin.version.jarsigner-plugin>
         <plugin.version.javadoc-plugin>2.10.4</plugin.version.javadoc-plugin>
         <plugin.version.jboss-as-plugin>7.9.Final</plugin.version.jboss-as-plugin>
+        <plugin.version.jdepend-plugin>2.0</plugin.version.jdepend-plugin>
         <plugin.version.jxr-plugin>2.5</plugin.version.jxr-plugin>
         <plugin.version.license-plugin>3.0</plugin.version.license-plugin>
         <plugin.version.linkcheck-plugin>1.2</plugin.version.linkcheck-plugin>
@@ -1281,6 +1282,13 @@
                 </plugin>
 
                 <plugin>
+                    <!-- Generate a report on project metrics -->
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>jdepend-maven-plugin</artifactId>
+                    <version>${plugin.version.jdepend-plugin}</version>
+                </plugin>
+
+                <plugin>
                     <!-- Generate a report on various tags found in the code -->
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>taglist-maven-plugin</artifactId>
@@ -1591,6 +1599,12 @@
                         </reports>
                     </reportSet>
                 </reportSets>
+            </plugin>
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>jdepend-maven-plugin</artifactId>
+                <version>${plugin.version.jdepend-plugin}</version>
             </plugin>
 
             <plugin>
