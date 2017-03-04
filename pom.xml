@@ -302,6 +302,7 @@
         <plugin.version.enforcer-plugin>1.4.1</plugin.version.enforcer-plugin>
         <plugin.version.failsafe-plugin>2.19.1</plugin.version.failsafe-plugin>
         <plugin.version.findbugs-plugin>3.0.4</plugin.version.findbugs-plugin>
+        <plugin.version.gitlog-plugin>1.13.3</plugin.version.gitlog-plugin>
         <plugin.version.gpg-plugin>1.6</plugin.version.gpg-plugin>
         <plugin.version.help-plugin>2.2</plugin.version.help-plugin>
         <plugin.version.install-plugin>2.5.2</plugin.version.install-plugin>
@@ -364,6 +365,12 @@
 
         <pluginManagement>
             <plugins>
+                <plugin>
+                    <groupId>com.github.danielflower.mavenplugins</groupId>
+                    <artifactId>gitlog-maven-plugin</artifactId>
+                    <version>${plugin.version.gitlog-plugin}</version>
+                </plugin>
+
                 <plugin>
                     <groupId>com.mycila</groupId>
                     <artifactId>license-maven-plugin</artifactId>
@@ -1439,6 +1446,15 @@
 
     <reporting>
         <plugins>
+            <plugin>
+                <groupId>com.github.danielflower.mavenplugins</groupId>
+                <artifactId>gitlog-maven-plugin</artifactId>
+                <version>${plugin.version.gitlog-plugin}</version>
+                <configuration>
+                    <simpleHTMLChangeLogFilename>gitlog.html</simpleHTMLChangeLogFilename>
+                </configuration>
+            </plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
