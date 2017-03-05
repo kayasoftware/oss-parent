@@ -200,13 +200,14 @@
         <config.check.skipDependency>${config.check.skipBasic}</config.check.skipDependency>
         <config.check.skipCheckstyle>${config.check.skipBasic}</config.check.skipCheckstyle>
         <config.check.skipDuplicateFinder>${config.check.skipBasic}</config.check.skipDuplicateFinder>
-        <config.check.skipDependencyVersionsCheck>${config.check.skipBasic}</config.check.skipDependencyVersionsCheck>
+        <config.check.skipDependencyVersions>${config.check.skipBasic}</config.check.skipDependencyVersions>
 
         <!-- skip extended checks -->
         <config.check.skipFindbugs>${config.check.skipExtended}</config.check.skipFindbugs>
         <config.check.skipPmd>${config.check.skipExtended}</config.check.skipPmd>
         <config.check.skipLicense>${config.check.skipExtended}</config.check.skipLicense>
         <config.check.skipJacoco>${config.check.skipExtended}</config.check.skipJacoco>
+        <config.check.skipDependencyOwasp>${config.check.skipExtended}</config.check.skipDependencyOwasp>
 
         <config.check.failAll>true</config.check.failAll>
         <config.check.failBasic>${config.check.failAll}</config.check.failBasic>
@@ -223,6 +224,7 @@
         <config.check.failFindbugs>${config.check.failExtended}</config.check.failFindbugs>
         <config.check.failPmd>${config.check.failExtended}</config.check.failPmd>
         <config.check.failLicense>${config.check.failExtended}</config.check.failLicense>
+        <config.check.failDependencyOwasp>${config.check.skipExtended}</config.check.failDependencyOwasp>
 
         <!-- Pedantic POM Enforcers consist of serveral Maven enforcer rules that help you keep your -->
         <!-- project setup consistent and organized (https://github.com/ferstl/pedantic-pom-enforcers) -->
@@ -291,6 +293,7 @@
         <plugin.version.checkstyle-plugin>2.17</plugin.version.checkstyle-plugin>
         <plugin.version.clean-plugin>3.0.0</plugin.version.clean-plugin>
         <plugin.version.compiler-plugin>3.6.1</plugin.version.compiler-plugin>
+        <plugin.version.dependency-check-plugin>1.4.5</plugin.version.dependency-check-plugin>
         <plugin.version.dependency-plugin>3.0.0</plugin.version.dependency-plugin>
         <plugin.version.dependency-versions-check>2.0.4</plugin.version.dependency-versions-check>
         <plugin.version.deploy-plugin>2.8.2</plugin.version.deploy-plugin>
@@ -423,7 +426,7 @@
                     <artifactId>maven-dependency-versions-check-plugin</artifactId>
                     <version>${plugin.version.dependency-versions-check}</version>
                     <configuration>
-                        <skip>${config.check.skipDependencyVersionsCheck}</skip>
+                        <skip>${config.check.skipDependencyVersions}</skip>
                         <failBuildInCaseOfConflict>${config.check.failDependencyVersionsCheck}</failBuildInCaseOfConflict>
                     </configuration>
                     <executions>
@@ -1371,6 +1374,26 @@
                         </domain>
                     </configuration>
                 </plugin>
+
+                <plugin>
+                    <groupId>org.owasp</groupId>
+                    <artifactId>dependency-check-maven</artifactId>
+                    <version>${plugin.version.dependency-check-plugin}</version>
+                    <configuration>
+                        <name>OWASP Dependency Check</name>
+                        <skip>${config.check.skipDependencyOwasp}</skip>
+                        <failBuildOnAnyVulnerability>${config.check.failDependencyOwasp}</failBuildOnAnyVulnerability>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <id>check-maven-dependencies</id>
+                            <phase>verify</phase>
+                            <goals>
+                                <goal>check</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
             </plugins>
         </pluginManagement>
 
@@ -1433,6 +1456,11 @@
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                <groupId>org.owasp</groupId>
+                <artifactId>dependency-check-maven</artifactId>
             </plugin>
         </plugins>
 
@@ -1719,6 +1747,19 @@
                         <reports>
                             <report>report</report>
                             <report>report-integration</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+            </plugin>
+
+            <plugin>
+                <groupId>org.owasp</groupId>
+                <artifactId>dependency-check-maven</artifactId>
+                <version>${plugin.version.dependency-check-plugin}</version>
+                <reportSets>
+                    <reportSet>
+                        <reports>
+                            <report>aggregate</report>
                         </reports>
                     </reportSet>
                 </reportSets>
