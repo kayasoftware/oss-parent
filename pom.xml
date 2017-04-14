@@ -1279,6 +1279,18 @@
                         <jvmArgs>-Xmx${config.build.jvmsize}</jvmArgs>
                         <failOnError>${config.check.failFindbugs}</failOnError>
                         <excludeFilterFile>${config.findbugs.excludeFilterFile}</excludeFilterFile>
+                        <plugins>
+                            <dependency>
+                                <groupId>com.mebigfatguy.fb-contrib</groupId>
+                                <artifactId>fb-contrib</artifactId>
+                                <version>LATEST</version>
+                            </dependency>
+                            <plugin>
+                                <groupId>com.h3xstream.findsecbugs</groupId>
+                                <artifactId>findsecbugs-plugin</artifactId>
+                                <version>LATEST</version>
+                            </plugin>
+                        </plugins>
                     </configuration>
                     <executions>
                         <execution>
