@@ -1162,6 +1162,22 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-toolchains-plugin</artifactId>
                     <version>${plugin.version.toolchains-plugin}</version>
+                    <executions>
+                        <execution>
+                            <id>set-jdk-toolchain</id>
+                            <phase>validate</phase>
+                            <goals>
+                                <goal>toolchain</goal>
+                            </goals>
+                            <configuration>
+                                <toolchains>
+                                    <jdk>
+                                        <version>${maven.compiler.target}</version>
+                                    </jdk>
+                                </toolchains>
+                            </configuration>
+                        </execution>
+                    </executions>
                 </plugin>
 
                 <plugin>
@@ -1410,6 +1426,11 @@
         </pluginManagement>
 
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-toolchains-plugin</artifactId>
+            </plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-source-plugin</artifactId>
