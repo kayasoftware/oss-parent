@@ -1274,13 +1274,6 @@
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>findbugs-maven-plugin</artifactId>
                     <version>${plugin.version.findbugs-plugin}</version>
-                    <dependencies>
-                        <dependency>
-                            <groupId>com.github.spotbugs</groupId>
-                            <artifactId>spotbugs</artifactId>
-                            <version>3.1.0-RC1</version>
-                        </dependency>
-                    </dependencies>
                     <configuration>
                         <skip>${config.check.skipFindbugs}</skip>
                         <jvmArgs>-Xmx${config.build.jvmsize}</jvmArgs>
