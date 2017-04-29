@@ -1283,12 +1283,12 @@
                             <dependency>
                                 <groupId>com.mebigfatguy.fb-contrib</groupId>
                                 <artifactId>fb-contrib</artifactId>
-                                <version>LATEST</version>
+                                <version>7.0.1</version>
                             </dependency>
                             <plugin>
                                 <groupId>com.h3xstream.findsecbugs</groupId>
                                 <artifactId>findsecbugs-plugin</artifactId>
-                                <version>LATEST</version>
+                                <version>1.6.0</version>
                             </plugin>
                         </plugins>
                     </configuration>
