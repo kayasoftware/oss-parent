@@ -242,13 +242,13 @@
         <config.enforcer.dependencyManagementArtifactIdPriorities/>
         <config.enforcer.dependencyManagementGroupIdPriorities/>
         <config.enforcer.dependencyManagementOrderBy>scope,groupId,artifactId</config.enforcer.dependencyManagementOrderBy>
-        <config.enforcer.dependencyManagementScopePriorities/>
+        <config.enforcer.dependencyManagementScopePriorities>compile,runtime,provided</config.enforcer.dependencyManagementScopePriorities>
 
         <!-- PedanticDependencyOrderEnforcer -->
         <config.enforcer.dependenciesArtifactIdPriorities/>
-        <config.enforcer.dependenciesGroupIdPriorities>compile,runtime,provided</config.enforcer.dependenciesGroupIdPriorities>
+        <config.enforcer.dependenciesGroupIdPriorities/>
         <config.enforcer.dependenciesOrderBy>scope,groupId,artifactId</config.enforcer.dependenciesOrderBy>
-        <config.enforcer.dependenciesScopePriorities/>
+        <config.enforcer.dependenciesScopePriorities>compile,runtime,provided</config.enforcer.dependenciesScopePriorities>
 
         <!-- PedanticDependencyScopeEnforcer -->
         <config.enforcer.compileDependencies/>
