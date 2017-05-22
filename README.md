@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/kayasoftware/oss-parent.png?label=ready&title=Ready)](https://waffle.io/kayasoftware/oss-parent?utm_source=badge)
 # Parent POM for Kaya Software's open source projects 
 
 ## About
