@@ -126,6 +126,14 @@
         <build.number>${buildNumber}</build.number>
         <build.timestamp>${maven.build.timestamp}</build.timestamp>
 
+        <!-- Arbitrary JVM options to set on the command line (applies to maven-surefire-plugin & maven-failsafe-plugin -->
+        <argLine/>
+
+        <!-- https://antoniogoncalves.org/2012/12/13/lets-turn-integration-tests-with-maven-to-a-first-class-citizen/ -->
+        <skipTests>false</skipTests>
+        <skipITs>${skipTests}</skipITs>
+        <skipUTs>${skipTests}</skipUTs>
+
         <!-- *************************************** -->
         <!--  POM specific configuration properties -->
         <!-- *************************************** -->
@@ -175,9 +183,10 @@
         <config.maven.version>3.3.3</config.maven.version>
 
         <!-- define the number of VMs to fork in parallel in order to execute the tests, default value is 1 -->
-        <config.test.forkCount>1</config.test.forkCount>
+        <!-- When using Jacoco, you must NOT use a forkCount with a value of 0 -->
+        <config.test.surefire.forkCount>1</config.test.surefire.forkCount>
         <!-- define if forked VMs can be reused in tests, default value is true -->
-        <config.test.reuseForks>true</config.test.reuseForks>
+        <config.test.surefire.reuseForks>true</config.test.surefire.reuseForks>
 
         <config.findbugs.excludeFilterFile/>
 
@@ -206,7 +215,6 @@
         <config.check.skipFindbugs>${config.check.skipExtended}</config.check.skipFindbugs>
         <config.check.skipPmd>${config.check.skipExtended}</config.check.skipPmd>
         <config.check.skipLicense>${config.check.skipExtended}</config.check.skipLicense>
-        <config.check.skipJacoco>${config.check.skipExtended}</config.check.skipJacoco>
         <config.check.skipDependencyOwasp>${config.check.skipExtended}</config.check.skipDependencyOwasp>
 
         <config.check.failAll>true</config.check.failAll>
@@ -276,6 +284,10 @@
 
         <!-- PedanticPomSectionOrderEnforcer -->
         <config.enforcer.pomSectionPriorities>modelVersion,parent,groupId,artifactId,version,packaging,name,description,url,inceptionYear,organization,licenses,developers,contributors,mailingLists,prerequisites,modules,scm,issueManagement,ciManagement,distributionManagement,properties,dependencyManagement,dependencies,repositories,pluginRepositories,build,reports,reporting,profiles</config.enforcer.pomSectionPriorities>
+
+        <config.jacoco.percentage.instruction>0</config.jacoco.percentage.instruction>
+        <config.jacoco.agent.executionDataFile.path>${project.build.directory}/jacoco.exec</config.jacoco.agent.executionDataFile.path>
+        <config.jacoco.agent.integration.executionDataFile.path>${project.build.directory}/jacoco-it.exec</config.jacoco.agent.integration.executionDataFile.path>
 
         <!-- *************************** -->
         <!--  Plugin version properties  -->
@@ -773,6 +785,26 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-failsafe-plugin</artifactId>
                     <version>${plugin.version.failsafe-plugin}</version>
+                    <configuration>
+                        <skipTests>${skipTests}</skipTests>
+                        <skipITs>${skipITs}</skipITs>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <id>run-integration-tests</id>
+                            <phase>integration-test</phase>
+                            <goals>
+                                <goal>integration-test</goal>
+                            </goals>
+                        </execution>
+                        <execution>
+                            <id>verify-integration-tests</id>
+                            <phase>verify</phase>
+                            <goals>
+                                <goal>verify</goal>
+                            </goals>
+                        </execution>
+                    </executions>
                 </plugin>
 
                 <plugin>
@@ -1145,8 +1177,9 @@
                             <java.awt.headless>true</java.awt.headless>
                         </systemPropertyVariables>
                         <runOrder>random</runOrder>
-                        <forkCount>${config.test.forkCount}</forkCount>
-                        <reuseForks>${config.test.reuseForks}</reuseForks>
+                        <forkCount>${config.test.surefire.forkCount}</forkCount>
+                        <reuseForks>${config.test.surefire.reuseForks}</reuseForks>
+                        <skipTests>${skipUTs}</skipTests>
                     </configuration>
                 </plugin>
 
@@ -1346,7 +1379,7 @@
                     <artifactId>jacoco-maven-plugin</artifactId>
                     <version>${plugin.version.jacoco-plugin}</version>
                     <configuration>
-                        <skip>${config.check.skipJacoco}</skip>
+                        <skip>${skipTests}</skip>
                     </configuration>
                     <executions>
                         <execution>
@@ -1355,6 +1388,9 @@
                             <goals>
                                 <goal>prepare-agent</goal>
                             </goals>
+                            <configuration>
+                                <destFile>${config.jacoco.agent.executionDataFile.path}</destFile>
+                            </configuration>
                         </execution>
                         <execution>
                             <id>default-prepare-agent-integration</id>
@@ -1362,6 +1398,9 @@
                             <goals>
                                 <goal>prepare-agent-integration</goal>
                             </goals>
+                            <configuration>
+                                <destFile>${config.jacoco.agent.integration.executionDataFile.path}</destFile>
+                            </configuration>
                         </execution>
                         <execution>
                             <id>default-report</id>
@@ -1369,6 +1408,10 @@
                             <goals>
                                 <goal>report</goal>
                             </goals>
+                            <configuration>
+                                <dataFile>${config.jacoco.agent.executionDataFile.path}</dataFile>
+                                <outputDirectory>${project.reporting.outputDirectory}/jacoco</outputDirectory>
+                            </configuration>
                         </execution>
                         <execution>
                             <id>default-report-integration</id>
@@ -1376,6 +1419,30 @@
                             <goals>
                                 <goal>report-integration</goal>
                             </goals>
+                            <configuration>
+                                <dataFile>${config.jacoco.agent.integration.executionDataFile.path}</dataFile>
+                                <outputDirectory>${project.reporting.outputDirectory}/jacoco-it</outputDirectory>
+                            </configuration>
+                        </execution>
+                        <execution>
+                            <id>default-check</id>
+                            <goals>
+                                <goal>check</goal>
+                            </goals>
+                            <configuration>
+                                <rules>
+                                    <rule>
+                                        <element>BUNDLE</element>
+                                        <limits>
+                                            <limit>
+                                                <counter>INSTRUCTION</counter>
+                                                <value>COVEREDRATIO</value>
+                                                <minimum>${config.jacoco.percentage.instruction}</minimum>
+                                            </limit>
+                                        </limits>
+                                    </rule>
+                                </rules>
+                            </configuration>
                         </execution>
                     </executions>
                 </plugin>
@@ -1449,6 +1516,11 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-failsafe-plugin</artifactId>
             </plugin>
 
             <plugin>
