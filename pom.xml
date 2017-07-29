@@ -987,6 +987,7 @@
                     <artifactId>maven-pmd-plugin</artifactId>
                     <version>${plugin.version.pmd-plugin}</version>
                     <configuration>
+                        <linkXRef>true</linkXRef>
                         <skip>${config.check.skipPmd}</skip>
                         <failOnViolation>${config.check.failPmd}</failOnViolation>
                         <failurePriority>4</failurePriority>
