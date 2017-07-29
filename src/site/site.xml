@@ -38,20 +38,29 @@
         <version>1.6</version>
     </skin>
 
-    <body>
-        <!-- menu with links to all the generated reports for your project -->
-        <menu ref="reports" inherit="bottom"/>
-        <!-- menu containing the links to the sites of the submodules of this project -->
-        <menu ref="modules" inherit="bottom"/>
-        <!-- menu with a link to the parent project's site -->
-        <menu ref="parent" inherit="bottom"/>
-    </body>
-
     <custom>
         <fluidoSkin>
+            <breadcrumbDivider>»</breadcrumbDivider>
+            <copyrightClass>pull-right</copyrightClass>
+            <leftColumnClass>span2</leftColumnClass>
+            <bodyColumnClass>span10</bodyColumnClass>
             <topBarEnabled>false</topBarEnabled>
             <sideBarEnabled>true</sideBarEnabled>
             <sourceLineNumbersEnabled>true</sourceLineNumbersEnabled>
+            <gitHub>
+                <projectId>${config.scm.owner}/${config.scm.repoName}</projectId>
+                <ribbonOrientation>right</ribbonOrientation>
+                <ribbonColor>green</ribbonColor>
+            </gitHub>
         </fluidoSkin>
     </custom>
+
+    <body>
+        <!-- menu with links to all the generated reports for your project -->
+        <menu ref="reports" />
+        <!-- menu containing the links to the sites of the submodules of this project -->
+        <menu ref="modules" />
+        <!-- menu with a link to the parent project's site -->
+        <menu ref="parent" />
+    </body>
 </project>
