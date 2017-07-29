@@ -182,11 +182,17 @@
         <!-- the current "best" version of maven -->
         <config.maven.version>3.3.3</config.maven.version>
 
-        <!-- define the number of VMs to fork in parallel in order to execute the tests, default value is 1 -->
+        <!-- define the number of VMs to fork in parallel in order to execute the unit tests, default value is 1 -->
         <!-- When using Jacoco, you must NOT use a forkCount with a value of 0 -->
         <config.test.surefire.forkCount>1</config.test.surefire.forkCount>
-        <!-- define if forked VMs can be reused in tests, default value is true -->
+        <!-- define if forked VMs can be reused in unit tests, default value is true -->
         <config.test.surefire.reuseForks>true</config.test.surefire.reuseForks>
+
+        <!-- define the number of VMs to fork in parallel in order to execute the integration tests, default value is 1 -->
+        <!-- When using Jacoco, you must NOT use a forkCount with a value of 0 -->
+        <config.test.failsafe.forkCount>${config.test.surefire.forkCount}</config.test.failsafe.forkCount>
+        <!-- define if forked VMs can be reused in integration tests, default value is true -->
+        <config.test.failsafe.reuseForks>${config.test.surefire.reuseForks}</config.test.failsafe.reuseForks>
 
         <config.findbugs.excludeFilterFile/>
 
@@ -786,6 +792,9 @@
                     <artifactId>maven-failsafe-plugin</artifactId>
                     <version>${plugin.version.failsafe-plugin}</version>
                     <configuration>
+                        <runOrder>random</runOrder>
+                        <forkCount>${config.test.failsafe.forkCount}</forkCount>
+                        <reuseForks>${config.test.failsafe.reuseForks}</reuseForks>
                         <skipTests>${skipTests}</skipTests>
                         <skipITs>${skipITs}</skipITs>
                     </configuration>
