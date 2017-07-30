@@ -311,7 +311,7 @@
         <plugin.version.checkstyle-plugin>2.17</plugin.version.checkstyle-plugin>
         <plugin.version.clean-plugin>3.0.0</plugin.version.clean-plugin>
         <plugin.version.compiler-plugin>3.6.1</plugin.version.compiler-plugin>
-        <plugin.version.dependency-check-plugin>1.4.5</plugin.version.dependency-check-plugin>
+        <plugin.version.dependency-check-plugin>2.1.0</plugin.version.dependency-check-plugin>
         <plugin.version.dependency-plugin>3.0.0</plugin.version.dependency-plugin>
         <plugin.version.dependency-versions-check>2.0.4</plugin.version.dependency-versions-check>
         <plugin.version.deploy-plugin>2.8.2</plugin.version.deploy-plugin>
@@ -360,7 +360,7 @@
         <plugin.version.taglist-plugin>2.4</plugin.version.taglist-plugin>
         <plugin.version.toolchains-plugin>1.1</plugin.version.toolchains-plugin>
         <plugin.version.verifier-plugin>1.1</plugin.version.verifier-plugin>
-        <plugin.version.versions-plugin>2.3</plugin.version.versions-plugin>
+        <plugin.version.versions-plugin>2.4</plugin.version.versions-plugin>
         <plugin.version.war-plugin>3.0.0</plugin.version.war-plugin>
 
         <!-- ************************************** -->
