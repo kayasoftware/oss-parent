@@ -238,7 +238,7 @@
         <config.check.failFindbugs>${config.check.failExtended}</config.check.failFindbugs>
         <config.check.failPmd>${config.check.failExtended}</config.check.failPmd>
         <config.check.failLicense>${config.check.failExtended}</config.check.failLicense>
-        <config.check.failDependencyOwasp>${config.check.skipExtended}</config.check.failDependencyOwasp>
+        <config.check.failDependencyOwasp>${config.check.failExtended}</config.check.failDependencyOwasp>
 
         <!-- Pedantic POM Enforcers consist of serveral Maven enforcer rules that help you keep your -->
         <!-- project setup consistent and organized (https://github.com/ferstl/pedantic-pom-enforcers) -->
