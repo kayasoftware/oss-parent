@@ -196,6 +196,14 @@
 
         <config.findbugs.excludeFilterFile/>
 
+        <!-- File that lists classes and rules to be excluded from failures. -->
+        <pmd.excludeFromFailureFile/>
+        <!-- For PMD, this is a properties file (e.g., exclude-pmd.properties). -->
+        <config.pmd.pmd.excludeFromFailureFile>${pmd.excludeFromFailureFile}</config.pmd.pmd.excludeFromFailureFile>
+        <!-- For CPD, this is a text file that contains comma-separated lists of classes that are allowed to duplicate. -->
+        <!-- (e.g., exclude-cpd.properties) -->
+        <config.pmd.cpd.excludeFromFailureFile>${pmd.excludeFromFailureFile}</config.pmd.cpd.excludeFromFailureFile>
+
         <!-- Define default properties for jboss-as-maven-plugin -->
         <config.jboss-as.hostname>localhost</config.jboss-as.hostname>
         <config.jboss-as.port>9999</config.jboss-as.port>
@@ -987,22 +995,37 @@
                     <artifactId>maven-pmd-plugin</artifactId>
                     <version>${plugin.version.pmd-plugin}</version>
                     <configuration>
-                        <linkXRef>true</linkXRef>
                         <skip>${config.check.skipPmd}</skip>
-                        <failOnViolation>${config.check.failPmd}</failOnViolation>
-                        <failurePriority>4</failurePriority>
+                        <linkXRef>true</linkXRef>
                         <targetJdk>${maven.compiler.target}</targetJdk>
                         <sourceEncoding>${project.build.sourceEncoding}</sourceEncoding>
+                        <failOnViolation>${config.check.failPmd}</failOnViolation>
                     </configuration>
                     <executions>
                         <execution>
-                            <id>default</id>
+                            <id>default-pmd-check</id>
                             <phase>verify</phase>
+                            <configuration>
+                                <failurePriority>5</failurePriority>
+                                <verbose>true</verbose>
+                                <excludeFromFailureFile>${config.pmd.pmd.excludeFromFailureFile}</excludeFromFailureFile>
+                            </configuration>
                             <goals>
                                 <goal>check</goal>
+                            </goals>
+                        </execution>
+                        <execution>
+                            <id>default-cpd-check</id>
+                            <phase>verify</phase>
+                            <configuration>
+                                <verbose>true</verbose>
+                                <excludeFromFailureFile>${config.pmd.cpd.excludeFromFailureFile}</excludeFromFailureFile>
+                            </configuration>
+                            <goals>
                                 <goal>cpd-check</goal>
                             </goals>
                         </execution>
+
                     </executions>
                 </plugin>
 
