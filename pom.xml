@@ -194,7 +194,10 @@
         <!-- define if forked VMs can be reused in integration tests, default value is true -->
         <config.test.failsafe.reuseForks>${config.test.surefire.reuseForks}</config.test.failsafe.reuseForks>
 
-        <config.findbugs.excludeFilterFile/>
+        <!-- File that lists by class and method which bug categories to exclude from failures -->
+        <findbugs.excludeFilterFile/>
+        <!-- This is an XML file (e.g., findbugs-exclude.xml). -->
+        <config.findbugs.excludeFilterFile>${findbugs.excludeFilterFile}</config.findbugs.excludeFilterFile>
 
         <!-- File that lists classes and rules to be excluded from failures. -->
         <pmd.excludeFromFailureFile/>
@@ -377,7 +380,9 @@
         <plugin.dep.version.checkstyle>7.8</plugin.dep.version.checkstyle>
         <plugin.dep.version.pedantic-pom-enforcers>1.2.0</plugin.dep.version.pedantic-pom-enforcers>
         <plugin.dep.version.doxia-module-markdown>1.7</plugin.dep.version.doxia-module-markdown>
-        <plugin.dep.plugin.version.fluido-skin>1.6</plugin.dep.plugin.version.fluido-skin>
+        <plugin.dep.version.fluido-skin>1.6</plugin.dep.version.fluido-skin>
+        <plugin.dep.version.fb-contrib>7.0.3</plugin.dep.version.fb-contrib>
+        <plugin.dep.version.findsecbugs>1.7.0</plugin.dep.version.findsecbugs>
     </properties>
 
     <build>
@@ -1149,7 +1154,7 @@
                         <dependency>
                             <groupId>org.apache.maven.skins</groupId>
                             <artifactId>maven-fluido-skin</artifactId>
-                            <version>${plugin.dep.plugin.version.fluido-skin}</version>
+                            <version>${plugin.dep.version.fluido-skin}</version>
                         </dependency>
                     </dependencies>
                 </plugin>
@@ -1358,25 +1363,27 @@
                     <version>${plugin.version.findbugs-plugin}</version>
                     <configuration>
                         <skip>${config.check.skipFindbugs}</skip>
-                        <jvmArgs>-Xmx${config.build.jvmsize}</jvmArgs>
                         <failOnError>${config.check.failFindbugs}</failOnError>
+                        <effort>Max</effort>
+                        <threshold>Default</threshold>
+                        <xmlOutput>true</xmlOutput>
                         <excludeFilterFile>${config.findbugs.excludeFilterFile}</excludeFilterFile>
                         <plugins>
                             <dependency>
                                 <groupId>com.mebigfatguy.fb-contrib</groupId>
                                 <artifactId>fb-contrib</artifactId>
-                                <version>7.0.1</version>
+                                <version>${plugin.dep.version.fb-contrib}</version>
                             </dependency>
                             <plugin>
                                 <groupId>com.h3xstream.findsecbugs</groupId>
                                 <artifactId>findsecbugs-plugin</artifactId>
-                                <version>1.6.0</version>
+                                <version>${plugin.dep.version.findsecbugs}</version>
                             </plugin>
                         </plugins>
                     </configuration>
                     <executions>
                         <execution>
-                            <id>default</id>
+                            <id>default-findbugs-check</id>
                             <phase>verify</phase>
                             <goals>
                                 <goal>check</goal>
@@ -1773,6 +1780,10 @@
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>findbugs-maven-plugin</artifactId>
                 <version>${plugin.version.findbugs-plugin}</version>
+                <configuration>
+                    <effort>Max</effort>
+                    <threshold>Low</threshold>
+                </configuration>
                 <reportSets>
                     <reportSet>
                         <id>default</id>
