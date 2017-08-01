@@ -377,7 +377,7 @@
         <!-- ************************************** -->
         <!--  Plugin dependency version properties  -->
         <!-- ************************************** -->
-        <plugin.dep.version.checkstyle>7.8</plugin.dep.version.checkstyle>
+        <plugin.dep.version.checkstyle>8.1</plugin.dep.version.checkstyle>
         <plugin.dep.version.pedantic-pom-enforcers>1.2.0</plugin.dep.version.pedantic-pom-enforcers>
         <plugin.dep.version.doxia-module-markdown>1.7</plugin.dep.version.doxia-module-markdown>
         <plugin.dep.version.fluido-skin>1.6</plugin.dep.version.fluido-skin>
