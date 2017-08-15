@@ -569,8 +569,8 @@
                         <maxmem>${config.build.jvmsize}</maxmem>
                         <compilerArgs>
                             <!-- Terminate compilation if warnings occur -->
-                            <compilerArg>-Werror</compilerArg>
-                            <compilerArg>-Xlint:unchecked</compilerArg>
+                            <arg>-Werror</arg>
+                            <arg>-Xlint:unchecked</arg>
                         </compilerArgs>
                     </configuration>
                 </plugin>
