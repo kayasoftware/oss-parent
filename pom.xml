@@ -208,10 +208,10 @@
         <config.pmd.cpd.excludeFromFailureFile>${pmd.excludeFromFailureFile}</config.pmd.cpd.excludeFromFailureFile>
 
         <!-- Define default properties for jboss-as-maven-plugin -->
-        <config.jboss-as.hostname>localhost</config.jboss-as.hostname>
-        <config.jboss-as.port>9999</config.jboss-as.port>
-        <config.jboss-as.id/>
+        <config.jboss-as.deployment-name>${project.artifactId}-${project.version}.${project.packaging}</config.jboss-as.deployment-name>
         <config.jboss-as.server-group/>
+        <config.jboss-as.undeploy-match-pattern>${project.artifactId}(-[0-9\.]+(-SNAPSHOT)?)?\.${project.packaging}</config.jboss-as.undeploy-match-pattern>
+        <config.jboss-as.undeploy-match-pattern-strategy>all</config.jboss-as.undeploy-match-pattern-strategy>
 
         <!-- Controls all the checkers run when building the project -->
         <!-- Can be activated with -Dconfig.check.skip-all=true on the command line -->
@@ -1493,20 +1493,18 @@
                     <artifactId>jboss-as-maven-plugin</artifactId>
                     <version>${plugin.version.jboss-as-plugin}</version>
                     <configuration>
-                        <!-- specifies the name used for the deployment. -->
-                        <name>${project.artifactId}.${project.packaging}</name>
-                        <!-- hostname defaults to localhost -->
-                        <hostname>${config.jboss-as.hostname}</hostname>
-                        <!-- port defaults to 9999 -->
-                        <port>${config.jboss-as.port}</port>
-                        <!-- no default, server id for credentials needs to be supplied -->
-                        <id>${config.jboss-as.id}</id>
+                        <!-- Specifies the name used for the deployment.
+                             Note that the name should end in a valid deployment extension. -->
+                        <name>${config.jboss-as.deployment-name}</name>
                         <domain>
                             <server-groups>
                                 <!-- no default, target server group needs to be supplied -->
                                 <server-group>${config.jboss-as.server-group}</server-group>
                             </server-groups>
                         </domain>
+                        <!-- used to find artifacts to undeploy -->
+                        <matchPattern>${config.jboss-as.undeploy-match-pattern}</matchPattern>
+                        <matchPatternStrategy>${config.jboss-as.undeploy-match-pattern-strategy}</matchPatternStrategy>
                     </configuration>
                 </plugin>
 
