@@ -1304,19 +1304,20 @@
                             <goals>
                                 <goal>check</goal>
                             </goals>
+                            <configuration>
+                                <skip>${config.check.skipDuplicateFinder}</skip>
+                                <failBuildInCaseOfConflict>${config.check.failDuplicateFinder}</failBuildInCaseOfConflict>
+                                <checkTestClasspath>false</checkTestClasspath>
+                                <ignoredResourcePatterns>
+                                    <ignoredResourcePattern>.*\.html</ignoredResourcePattern>
+                                    <ignoredResourcePattern>META-INF/.*</ignoredResourcePattern>
+                                    <ignoredResourcePattern>about_files/.*</ignoredResourcePattern>
+                                    <ignoredResourcePattern>plugin\.properties</ignoredResourcePattern>
+                                    <ignoredResourcePattern>.*\.java</ignoredResourcePattern>
+                                </ignoredResourcePatterns>
+                            </configuration>
                         </execution>
                     </executions>
-                    <configuration>
-                        <skip>${config.check.skipDuplicateFinder}</skip>
-                        <failBuildInCaseOfConflict>${config.check.failDuplicateFinder}</failBuildInCaseOfConflict>
-                        <ignoredResourcePatterns>
-                            <ignoredResourcePattern>.*\.html</ignoredResourcePattern>
-                            <ignoredResourcePattern>META-INF/.*</ignoredResourcePattern>
-                            <ignoredResourcePattern>about_files/.*</ignoredResourcePattern>
-                            <ignoredResourcePattern>plugin\.properties</ignoredResourcePattern>
-                            <ignoredResourcePattern>.*\.java</ignoredResourcePattern>
-                        </ignoredResourcePatterns>
-                    </configuration>
                 </plugin>
 
                 <plugin>
