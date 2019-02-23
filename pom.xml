@@ -700,6 +700,10 @@
                             <!-- https://maven.apache.org/enforcer/enforcer-rules/requireUpperBoundDeps.html -->
                             <requireUpperBoundDeps/>
 
+                            <!-- ensure all dependencies converge to the same version -->
+                            <!-- https://maven.apache.org/enforcer/enforcer-rules/dependencyConvergence.html -->
+                            <dependencyConvergence/>
+
                             <compound implementation="com.github.ferstl.maven.pomenforcers.CompoundPedanticEnforcer">
 
                                 <enforcers>${config.enforcer.enforcers}</enforcers>
