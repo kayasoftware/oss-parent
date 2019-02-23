@@ -207,12 +207,6 @@
         <!-- (e.g., exclude-cpd.properties) -->
         <config.pmd.cpd.excludeFromFailureFile>${pmd.excludeFromFailureFile}</config.pmd.cpd.excludeFromFailureFile>
 
-        <!-- Define default properties for jboss-as-maven-plugin -->
-        <config.jboss-as.deployment-name>${project.artifactId}-${project.version}.${project.packaging}</config.jboss-as.deployment-name>
-        <config.jboss-as.server-group/>
-        <config.jboss-as.undeploy-match-pattern>${project.artifactId}(-[0-9\.]+(-SNAPSHOT)?)?\.${project.packaging}</config.jboss-as.undeploy-match-pattern>
-        <config.jboss-as.undeploy-match-pattern-strategy>all</config.jboss-as.undeploy-match-pattern-strategy>
-
         <!-- Controls all the checkers run when building the project -->
         <!-- Can be activated with -Dconfig.check.skip-all=true on the command line -->
         <config.check.skipAll>false</config.check.skipAll>
@@ -343,7 +337,6 @@
         <plugin.version.jar-plugin>3.1.0</plugin.version.jar-plugin>
         <plugin.version.jarsigner-plugin>3.0.0</plugin.version.jarsigner-plugin>
         <plugin.version.javadoc-plugin>3.0.1</plugin.version.javadoc-plugin>
-        <plugin.version.jboss-as-plugin>7.9.Final</plugin.version.jboss-as-plugin>
         <plugin.version.jdepend-plugin>2.0</plugin.version.jdepend-plugin>
         <plugin.version.jxr-plugin>3.0.0</plugin.version.jxr-plugin>
         <plugin.version.license-plugin>3.0</plugin.version.license-plugin>
@@ -1486,27 +1479,6 @@
                             </configuration>
                         </execution>
                     </executions>
-                </plugin>
-
-                <plugin>
-                    <!-- Deploy to JBoss Application Server 7 or higher -->
-                    <groupId>org.jboss.as.plugins</groupId>
-                    <artifactId>jboss-as-maven-plugin</artifactId>
-                    <version>${plugin.version.jboss-as-plugin}</version>
-                    <configuration>
-                        <!-- Specifies the name used for the deployment.
-                             Note that the name should end in a valid deployment extension. -->
-                        <name>${config.jboss-as.deployment-name}</name>
-                        <domain>
-                            <server-groups>
-                                <!-- no default, target server group needs to be supplied -->
-                                <server-group>${config.jboss-as.server-group}</server-group>
-                            </server-groups>
-                        </domain>
-                        <!-- used to find artifacts to undeploy -->
-                        <matchPattern>${config.jboss-as.undeploy-match-pattern}</matchPattern>
-                        <matchPatternStrategy>${config.jboss-as.undeploy-match-pattern-strategy}</matchPatternStrategy>
-                    </configuration>
                 </plugin>
 
                 <plugin>
