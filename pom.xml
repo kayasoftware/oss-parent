@@ -256,7 +256,6 @@
         <config.check.skipDependency>${config.check.skipBasic}</config.check.skipDependency>
         <config.check.skipCheckstyle>${config.check.skipBasic}</config.check.skipCheckstyle>
         <config.check.skipDuplicateFinder>${config.check.skipBasic}</config.check.skipDuplicateFinder>
-        <config.check.skipDependencyVersions>${config.check.skipBasic}</config.check.skipDependencyVersions>
 
         <!-- skip extended checks -->
         <config.check.skipFindbugs>${config.check.skipExtended}</config.check.skipFindbugs>
@@ -274,7 +273,6 @@
         <config.check.failDependency>${config.check.failBasic}</config.check.failDependency>
         <config.check.failCheckstyle>${config.check.failBasic}</config.check.failCheckstyle>
         <config.check.failDuplicateFinder>${config.check.failBasic}</config.check.failDuplicateFinder>
-        <config.check.failDependencyVersionsCheck>${config.check.failBasic}</config.check.failDependencyVersionsCheck>
 
         <!-- fail build on extended checks -->
         <config.check.failFindbugs>${config.check.failExtended}</config.check.failFindbugs>
@@ -353,7 +351,6 @@
         <plugin.version.compiler-plugin>3.8.0</plugin.version.compiler-plugin>
         <plugin.version.dependency-check-plugin>3.3.4</plugin.version.dependency-check-plugin>
         <plugin.version.dependency-plugin>3.1.1</plugin.version.dependency-plugin>
-        <plugin.version.dependency-versions-check>2.0.4</plugin.version.dependency-versions-check>
         <plugin.version.deploy-plugin>2.8.2</plugin.version.deploy-plugin>
         <plugin.version.doap-plugin>1.2</plugin.version.doap-plugin>
         <plugin.version.docck-plugin>1.1</plugin.version.docck-plugin>
@@ -468,25 +465,6 @@
                             <exclude>src/test/resources/**</exclude>
                             <exclude>src/site/**</exclude>
                         </excludes>
-                    </configuration>
-                    <executions>
-                        <execution>
-                            <id>default</id>
-                            <phase>verify</phase>
-                            <goals>
-                                <goal>check</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                </plugin>
-
-                <plugin>
-                    <groupId>com.ning.maven.plugins</groupId>
-                    <artifactId>maven-dependency-versions-check-plugin</artifactId>
-                    <version>${plugin.version.dependency-versions-check}</version>
-                    <configuration>
-                        <skip>${config.check.skipDependencyVersions}</skip>
-                        <failBuildInCaseOfConflict>${config.check.failDependencyVersionsCheck}</failBuildInCaseOfConflict>
                     </configuration>
                     <executions>
                         <execution>
@@ -700,17 +678,27 @@
                         <fail>${config.check.failEnforcer}</fail>
                         <failFast>false</failFast>
                         <rules>
+                            <!-- enforces the Maven version -->
+                            <!-- https://maven.apache.org/enforcer/enforcer-rules/requireMavenVersion.html -->
                             <requireMavenVersion>
                                 <version>[${config.maven.version},)</version>
                             </requireMavenVersion>
 
+                            <!-- enforces the JDK version. -->
+                            <!-- https://maven.apache.org/enforcer/enforcer-rules/requireJavaVersion.html -->
                             <requireJavaVersion>
                                 <version>${maven.compiler.target}</version>
                             </requireJavaVersion>
 
+                            <!-- enforces to not include repositories -->
+                            <!-- https://maven.apache.org/enforcer/enforcer-rules/requireNoRepositories.html -->
                             <requireNoRepositories>
                                 <message>Best practice is to never define repositories in pom.xml (use a repository manager instead)</message>
                             </requireNoRepositories>
+
+                            <!-- ensures that every (transitive) dependency is resolved to its specified version or higher -->
+                            <!-- https://maven.apache.org/enforcer/enforcer-rules/requireUpperBoundDeps.html -->
+                            <requireUpperBoundDeps/>
 
                             <compound implementation="com.github.ferstl.maven.pomenforcers.CompoundPedanticEnforcer">
 
@@ -1618,11 +1606,6 @@
             <plugin>
                 <groupId>org.basepom.maven</groupId>
                 <artifactId>duplicate-finder-maven-plugin</artifactId>
-            </plugin>
-
-            <plugin>
-                <groupId>com.ning.maven.plugins</groupId>
-                <artifactId>maven-dependency-versions-check-plugin</artifactId>
             </plugin>
 
             <plugin>
