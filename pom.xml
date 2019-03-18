@@ -402,7 +402,7 @@
         <!-- ************************************** -->
         <!--  Plugin dependency version properties  -->
         <!-- ************************************** -->
-        <plugin.dep.version.checkstyle>8.17</plugin.dep.version.checkstyle>
+        <plugin.dep.version.checkstyle>8.18</plugin.dep.version.checkstyle>
         <plugin.dep.version.doxia-module-markdown>1.8</plugin.dep.version.doxia-module-markdown>
         <plugin.dep.version.fluido-skin>1.7</plugin.dep.version.fluido-skin>
         <plugin.dep.version.fb-contrib>7.4.3</plugin.dep.version.fb-contrib>

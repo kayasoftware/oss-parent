@@ -3,6 +3,7 @@
 
 ## About
 This POM is used to provide a standard and consistent build for Maven-based Java projects.
+It customizes the default behavior of Maven and supplies some organization-specific information to configure deployment settings and build profiles.
 
 ## Usage
 
